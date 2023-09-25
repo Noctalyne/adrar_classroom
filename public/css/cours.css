@@ -1,0 +1,120 @@
+.cours-header
+{
+    background-color: #5584AC;
+}
+
+.cours-header-container
+{
+    margin: 0 25%;
+}
+
+.cours-titre
+{
+    margin: 0;
+    padding: 50px 0;
+}
+
+.cours-info
+{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 25px;
+}
+
+.cours-info-left
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cours-temps-estime, .cours-niveau
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cours-temps-estime p, .cours-niveau p
+{
+    padding-right: 15px;
+}
+
+.cours-temps-estime img, .cours-niveau img
+{
+    padding-right: 10px;
+}
+
+.image-cours-temps-estime, .image-cours-niveau
+{
+    width: 20px;
+    height: 20px;
+}
+
+.cours-date
+{
+    display: flex;
+}
+
+.cours-date img
+{
+    padding-right: 10px;
+}
+
+.chapitre-navigation
+{
+    display: flex;
+    margin: 50px 0;
+    align-items: center;
+}
+
+.chapitre-navigation img
+{
+    padding: 10px;
+}
+
+.chapitre-navigation-fleche
+{
+    position: absolute;
+    padding-top: 15px;
+}
+
+.chapitre-navigation-bloc
+{
+    background-color: grey;
+    border-width: 1px;
+    border-style: solid;
+    height: 20px;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.chapitre-courant
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chapitre-contenu
+{
+    margin: 0 25%;
+}
+
+.chapitre-buttons-navigation
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.chapitre-precedent-suivant
+{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+#valider-chapitre
+{
+    margin: 20px 25%;
+}
