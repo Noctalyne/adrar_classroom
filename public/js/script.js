@@ -1,3 +1,4 @@
+//Search Bar
 document.addEventListener('DOMContentLoaded', function() {
     const icon = document.querySelector('.icon');
     const searchContainer = document.getElementById('search-container');
@@ -24,3 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = '{{ path('/') }}?q=' + encodeURIComponent(searchValue);
     });
 });
+
+//Login
+

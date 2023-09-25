@@ -1,8 +1,4 @@
-    <header>
-        {% block header %}
-
-    <nav class="nav">        
-        {% block navbar %}
+{% block navbar %}
         <div class="header">
     <img src="{{ asset('images/adrar-classrooms-logoLogo.png') }}" alt="Logo" class="logo" />
     <h1>Classrooms</h1>
@@ -16,15 +12,11 @@
 <div id="search-container" style="display: none;">
     <form action="{{ path('app_adrar') }}" method="POST">
      <button type="button" id="search-button">
-            <img src="{{ asset('images/magnifying-glass-solid.svg') }}" alt="icon" class="icon" style=' cursor: pointer;' />
+            <img src="{{ asset('images/magnifying-glass-solid.svg') }}" alt="icon" class="icon2" style=' cursor: pointer;' />
         </button>
         <input type="text" name="q" placeholder="Recherche..." />
     </form>
 </div>
-<button type="button" class="login">Se connecter</button>
+<button type="button" class="login" onclick="location.href='/login'">Se connecter</button>
 </div>
-        {% endblock %}
-    </nav>
-
-        {% endblock %}
-        </header>
+{% endblock %}

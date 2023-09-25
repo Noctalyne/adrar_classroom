@@ -2,10 +2,14 @@
 
 {% block title %}Login{% endblock %}
 
+
 {% block body %}
+
+{% block header %} {% endblock %}
+
 <div class="container">
-    <div class="half1"
-        <form method="post">
+    <div class="col1">
+        <form method="post" action="{{ path('app_login')}}" >
             {% if error %}
                 <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
             {% endif %}
@@ -18,22 +22,46 @@
             
             <h1>ADRAR Classrooms</h1>
             <h2 class="h3 mb-3 font-weight-normal">Bienvenue</h2>
-            <label for="inputEmail">Email</label>
-            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-            <label for="inputPassword">Password</label>
-            <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                <div class="form">
+                    <div form-group>
+                        <label for="inputEmail">Email</label>
+                        <br>
+                        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                    </div>
+                    <div form-group>
+                        <label for="inputPassword">Mot de passe</label>
+                        <br>
+                        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                    </div>
+                    <input type="hidden" name="_csrf_token"
+                    value="{{ csrf_token('authenticate') }}">
 
-            <input type="hidden" name="_csrf_token"
-                value="{{ csrf_token('authenticate') }}"
-            >
+                    <button class="btn" type="submit">
+                        Se connecter
+                    </button>
 
-            <button class="btn btn-lg btn-primary" type="submit">
-                Sign in
-            </button>
+                     <div class="text-with-lines">
+                        <div class="left-line"></div>
+                        <div class="text">ou continuer avec</div>
+                        <div class="right-line"></div>
+                    </div>
+                    <div class="icon-google">
+                        <span>
+                            <img src="{{ asset('images/rectangle 13.png') }}" alt="image" class="google" />
+                        </span>
+                    </div>
+                </div>       
         </form>
-    <div>
+       
 
-    <div class="half2">
     </div>
+
+    <div class="col2">
+    <h2>J'étais musicien indépendant, mais la COVID a tout stoppé. 
+    On m'a parlé d'ADRAR Classrooms, ça m'a ouvert des opportunités professionnelles insoupçonnées."</h2>
+    <p>Alexandre - Développeur Full-Stack Junior</p>
+    <img src="{{ asset('images/image-removebg-preview 1.png') }}" alt="image" class="undraw" />
+    </div>
+
 </div>
 {% endblock %}

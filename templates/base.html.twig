@@ -16,20 +16,22 @@
         {% endblock %}
     </head>
 
-    <header>
+
+
+    <body>
+        {% block body %}
+
+            <header>
         {% block header %}
 
     <nav class="nav">        
         {% block navbar %}
-
+{% include 'header.html.twig'%}
         {% endblock %}
     </nav>
 
         {% endblock %}
         </header>
-
-    <body>
-        {% block body %}
     <main>
         {% block content %}{% endblock %}
     </main>
