@@ -4,32 +4,7 @@
 
 {% block header %}
 
-
-
-    {% block navbar %}
-    <div class="header">
-    <img src="{{ asset('images/adrar-classrooms-logoLogo.png') }}" alt="Logo" class="logo" />
-    <h1>Classrooms</h1>
-        <ul class="navbar">
-            <a href="{{ path('app_adrar') }}">Accueil</a>
-            <a href="{{ path('app_adrar') }}">Formations</a>
-            <a href="{{ path('app_adrar') }}">Administration</a>
-        </ul>
-             <img src="{{ asset('images/magnifying-glass-solid.svg') }}" alt="icon" class="icon" style=" fill: #ff0000; cursor: pointer;" />
-
-<div id="search-container" style="display: none;">
-    <form action="{{ path('app_adrar') }}" method="POST">
-     <button type="button" id="search-button">
-            <img src="{{ asset('images/magnifying-glass-solid.svg') }}" alt="icon" class="icon" style=' cursor: pointer;' />
-        </button>
-        <input type="text" name="q" placeholder="Recherche..." />
-    </form>
-</div>
-<button type="button" class="login">Se connecter</button>
-</div>
-    
-    {% endblock %}
-
+{% include 'header.html.twig' %}
 
 {% endblock %}
 
@@ -82,13 +57,8 @@
 </div>
 
     {% block footer %} 
-        <div class="footer">
-            <p>2023 © ADRAR Classrooms. Tous droits réservés.<p>
-            <div class="image-container">
-                <img src="{{ asset('images/chevron-up-solid.svg') }}" alt="icon" class="image2" style="filter: invert(1); fill: #ff0000; cursor: pointer;" />
-                <img src="{{ asset('images/chevron-up-solid.svg') }}" alt="icon" class="image3" style="filter: invert(1);fill: #ff0000; cursor: pointer;" />
-            </div>
-        </div>
+
+{% include 'footer.html.twig' %}
 
     {% endblock %}
 
