@@ -5,7 +5,9 @@
         <title>{% block title %} {# NOM DE CHAQUE PAGE #} {% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         
-        {% block stylesheets %}CSS{% endblock %}
+        {% block stylesheets %} {% endblock %}
+
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}"/> {# style carte cours #}
 
         {# Liens pour la police d'écriture  #}
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,15 +21,13 @@
  
     <body>
 
-        <header> {% include './composants/header.html.twig'%} </header>
+        {# <header> {% include './composants/header.html.twig'%} </header> #}
             
         
         {% block body %} {# CODE DE CHAQUE PAGE #} {% endblock %}
 
 
-        {#  {% block javascripts %} CODE JS  {% endblock %}   #}
-
-        <footer> {% include './composants/footer.html.twig'%} </footer>    
+        {# <footer> {% include './composants/footer.html.twig'%} </footer>     #}
 
         
     </body>

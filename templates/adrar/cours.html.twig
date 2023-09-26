@@ -1,25 +1,19 @@
 {% extends 'base.html.twig' %}
-{# {% include './composants/carte_cours.html.twig' %} #}
+
 
 {% block title %} Nos cours {% endblock %}
 
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('css/style.css') }}"/> {# base  --> VOIR SI POSSIBLE DE METTRE SUR LA BASE #} 
+    <link rel="stylesheet" href="{{ asset('css/dropdown_trie_cours.css') }}"/> {# style du bouton trie #}    
     <link rel="stylesheet" href="{{ asset('css/card_cours.css') }}"/> {# style carte cours #}
-    <link rel="stylesheet" href="{{ asset('css/dropdown_trie_cours.css') }}"/> {# #}
-
-    {# TEST BOOT #}
-    {# <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> #}
 {% endblock %}
 
 
 
 {% block body %}
 
-
-
-    
+    <header> {% include './composants/header.html.twig'%} </header>    
 
     <div id="liste_cours">
 
@@ -27,7 +21,6 @@
             <h5> Cours </h5>
             {% include './composants/trie_cours.html.twig' %}
         </div>
-
 
         {% include './composants/carte_cours.html.twig' %}
 
@@ -43,14 +36,8 @@
 
     </div>
 
-{% endblock %}
+    <footer> {% include './composants/footer.html.twig'%} </footer>
 
-
-
-{% block script %}
-{# TEST BOOT #}
-{# <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
-integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> #}
 {% endblock %}
 
 
