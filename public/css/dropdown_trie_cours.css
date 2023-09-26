@@ -1,0 +1,73 @@
+/* Dropdown button */
+.drop_btn {
+    width: 160px;
+    border: solid white 2px;
+    color: white;
+    padding: 5px;
+    background-color: black;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Texte du dropdown */
+.drop_btn p {
+    margin: 0px;
+    font-size: 18px;
+    align-self: flex-start;
+}
+
+
+/* Change la couleur des liens lors du passage de la souris */
+.dropdown:hover .drop_btn {
+    background-color: grey;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Change la couleur de la selection lors du passage souris */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Change la couleur lors du clique sur 1 des liens */
+.dropdown-content a:active {
+    color: #FFFFFF;
+    background-color: black;
+}
+
+
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* permet de changer la flèche */
+.arrow_trie {
+    filter: invert(1);
+    fill: #FFFFFF;
+    transform: rotate(180deg);
+    width: 30px;
+    height: 30px;
+
+}
