@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %} Nos cours {% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}"/> {# base  --> VOIR SI POSSIBLE DE METTRE SUR LA BASE #} 
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}"/>  
+{% endblock %}
+
+
+
+
+{% block body %} 
+
+  {% block header %}
+    {% include './composants/header.html.twig' %}
+  {% endblock %}
+
+<div class="travaux">
+    <h1> Page en cours de création </h1>
+    <img src="{{ asset('images/work_in_progress.jpg') }}" alt="en travaux" style=""/>
+</div>
+
+  {% block footer %}
+    {% include './composants/footer.html.twig' %}
+  {% endblock %}
+
+{% endblock %}

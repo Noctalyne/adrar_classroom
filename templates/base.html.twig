@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %} {# NOM DE CHAQUE PAGE #} {% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        
-        {% block stylesheets %} {% endblock %}
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      {% block title %}
+        {# NOM DE CHAQUE PAGE #}
+      {% endblock %}
+    </title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>" />
 
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}"/> {# style carte cours #}
+    {% block stylesheets %}
 
-        {# Liens pour la police d'écriture  #}
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    {% endblock %}
 
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" /> {# style de base #}
 
-       
-    </head>
+    {# Liens pour la police d'écriture #}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
 
- 
-    <body>
+    {% block javascripts %}
+      <script src="{{ asset('js/script.js') }}"></script>
+    {% endblock %}
+  </head>
 
-        {# <header> {% include './composants/header.html.twig'%} </header> #}
-            
-        
-        {% block body %} {# CODE DE CHAQUE PAGE #} {% endblock %}
+  <body>
+  
+    {# <header> {% block header %} {% endblock %} </header> #}
 
+    {% block body %}
+      {# CODE DE CHAQUE PAGE #}
+    {% endblock %}
 
-        {# <footer> {% include './composants/footer.html.twig'%} </footer>     #}
+    {# <footer> {% block footer %} {% endblock %} </footer>  #}
 
-        
-    </body>
+  </body>
 </html>
