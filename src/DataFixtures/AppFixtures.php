@@ -3,7 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Cours;
-use App\Entity\Chapitre;
+use App\Entity\Chapitres;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Lorem;
@@ -47,7 +47,7 @@ class AppFixtures extends Fixture
 
     public function createChapter($titre, $contenu, $position, $cours, $manager)
     {
-        $chapitre = new Chapitre();
+        $chapitre = new Chapitres();
         $chapitre->setTitre($titre);
         $chapitre->setContenu($contenu);
         $chapitre->setPosition($position);

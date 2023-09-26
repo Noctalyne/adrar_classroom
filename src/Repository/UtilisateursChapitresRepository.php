@@ -2,28 +2,28 @@
 
 namespace App\Repository;
 
-use App\Entity\Chapitre;
-use App\Entity\Utilisateur;
-use App\Entity\UtilisateurChapitres;
+use App\Entity\Chapitres;
+use App\Entity\Utilisateurs;
+use App\Entity\UtilisateursChapitres;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<UtilisateurChapitres>
+ * @extends ServiceEntityRepository<UtilisateursChapitres>
  *
- * @method UtilisateurChapitres|null find($id, $lockMode = null, $lockVersion = null)
- * @method UtilisateurChapitres|null findOneBy(array $criteria, array $orderBy = null)
- * @method UtilisateurChapitres[]    findAll()
- * @method UtilisateurChapitres[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method UtilisateursChapitres|null find($id, $lockMode = null, $lockVersion = null)
+ * @method UtilisateursChapitres|null findOneBy(array $criteria, array $orderBy = null)
+ * @method UtilisateursChapitres[]    findAll()
+ * @method UtilisateursChapitres[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class UtilisateurChapitresRepository extends ServiceEntityRepository
+class UtilisateursChapitresRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, UtilisateurChapitres::class);
+        parent::__construct($registry, UtilisateursChapitres::class);
     }
 
-    public function findByForeignKey(Utilisateur $utilisateur, Chapitre $chapitre) : UtilisateurChapitres
+    public function findByForeignKey(Utilisateurs $utilisateur, Chapitres $chapitre) : UtilisateursChapitres
     {
         return $this->createQueryBuilder('uc')
             ->andWhere('uc.utilisateur_id = :utilisateur_id')
@@ -35,7 +35,7 @@ class UtilisateurChapitresRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return UtilisateurChapitres[] Returns an array of UtilisateurChapitres objects
+//     * @return UtilisateurChapitres[] Returns an array of UtilisateursChapitres objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -49,7 +49,7 @@ class UtilisateurChapitresRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?UtilisateurChapitres
+//    public function findOneBySomeField($value): ?UtilisateursChapitres
 //    {
 //        return $this->createQueryBuilder('u')
 //            ->andWhere('u.exampleField = :val')

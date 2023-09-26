@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+{% block header %}
+
+{% include 'header.html.twig' %}
+
+{% endblock %}
+<div class="firstDiv">
+    <div class="firstText">
+    <h1>Votre métier de demain, à portée de main</h1>
+    <p>Développez de nouvelles compétences dans le domaine de <br>
+    l’informatique et intégrer la formation de votre choix.</p>
+        <div class="buttons">
+    <button class="button1">Démarrer ma candidature</button>
+    <button class="button2">Découvrir les formations</button>
+        </div>
+    </div>
+    <img src="{{ asset('images/undraw_studying_re_deca.png') }}" alt="image" class="undraw" />
+</div>
+
+
+<div class="col">
+        <div class="firstCol">
+        <img src="{{ asset('images/Ellipse 1.png') }}" alt="image" class="Ellipse1" />
+        <h2>Diplômes certifiants</h2>
+        <p>Nos parcours procurent des titres reconnus par l'état</p>
+        </div>
+
+        <div class="secondCol">
+        <img src="{{ asset('images/Ellipse 2.png') }}" alt="image" class="Ellipse2" />
+        <h2>Mentor</h2>
+        <p>Un expert du scteur vous suit de manière régulière</p>
+        </div>
+
+        <div class="thirdCol">
+        <img src="{{ asset('images/Ellipse 3.png') }}" alt="image" class="Ellipse3" />
+        <h2>Remboursé si non embauché</h2>
+        <p>Un expert du scteur vous suit de manière régulière</p>
+        </div>
+</div>
+
+<div class="thirdDiv">
+    <h2>Témoignages et sourires</h2>
+    <img src="{{ asset('images/Ellipse 4.png') }}" alt="image" class="Ellipse4" />
+    <h2>Austin</h2>
+    <p>"Too easy"</p>
+        <div class="chevrons">
+            <img src="{{ asset('images/circle-chevron-down-solid 2.svg') }}" alt="icon" class="chevron1" style=" fill: #ff0000; cursor: pointer;" />
+            <img src="{{ asset('images/circle-chevron-down-solid 2.svg') }}" alt="icon" class="chevron2" style="fill: #ff0000; cursor: pointer;" />
+        </div>
+</div>
+
+    {% block footer %} 
+
+{% include 'footer.html.twig' %}
+
+    {% endblock %}
+
+{% endblock %}

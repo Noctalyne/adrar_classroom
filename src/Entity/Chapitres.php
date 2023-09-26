@@ -2,38 +2,39 @@
 
 namespace App\Entity;
 
-use App\Repository\ChapitreRepository;
+use App\Repository\ChapitresRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: ChapitreRepository::class)]
-#[ORM\Table(name: "chapitres")]
-class Chapitre
+#[ORM\Entity(repositoryClass: ChapitresRepository::class)]
+class Chapitres
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
+    #[ORM\Column(name: "chapitre_id")]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, name: "chapitre_titre")]
     private ?string $titre = null;
 
-    #[ORM\Column(length: 65535)]
+    #[ORM\Column(length: 65535, name: "chapitre_contenu")]
     private ?string $contenu = null;
 
-    #[ORM\Column]
+    #[ORM\Column(name: "chapitre_position")]
     private ?int $position = null;
 
     #[ORM\ManyToOne(inversedBy: 'chapitres')]
+    #[ORM\JoinColumn(name: "id_cours", referencedColumnName: "cours_id")]
     private ?Cours $cours = null;
 
-    #[ORM\OneToMany(mappedBy: 'chapitre', targetEntity: UtilisateurChapitres::class)]
-    private Collection $utilisateurChapitres;
+    #[ORM\OneToMany(mappedBy: 'chapitres', targetEntity: UtilisateursChapitres::class)]
+    #[ORM\JoinColumn(referencedColumnName: "utlisateur_chapitre_id")]
+    private Collection $utilisateursChapitres;
 
     public function __construct()
     {
-        $this->utilisateurChapitres = new ArrayCollection();
+        $this->utilisateursChapitres = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -90,29 +91,29 @@ class Chapitre
     }
 
     /**
-     * @return Collection<int, UtilisateurChapitres>
+     * @return Collection<int, UtilisateursChapitres>
      */
     public function getUtilisateurChapitres(): Collection
     {
-        return $this->utilisateurChapitres;
+        return $this->utilisateursChapitres;
     }
 
-    public function addUtilisateurChapitre(UtilisateurChapitres $utilisateurChapitre): static
+    public function addUtilisateurChapitre(UtilisateursChapitres $utilisateurChapitre): static
     {
-        if (!$this->utilisateurChapitres->contains($utilisateurChapitre)) {
-            $this->utilisateurChapitres->add($utilisateurChapitre);
-            $utilisateurChapitre->setChapitre($this);
+        if (!$this->utilisateursChapitres->contains($utilisateurChapitre)) {
+            $this->utilisateursChapitres->add($utilisateurChapitre);
+            $utilisateurChapitre->setChapitres($this);
         }
 
         return $this;
     }
 
-    public function removeUtilisateurChapitre(UtilisateurChapitres $utilisateurChapitre): static
+    public function removeUtilisateurChapitre(UtilisateursChapitres $utilisateurChapitre): static
     {
-        if ($this->utilisateurChapitres->removeElement($utilisateurChapitre)) {
+        if ($this->utilisateursChapitres->removeElement($utilisateurChapitre)) {
             // set the owning side to null (unless already changed)
-            if ($utilisateurChapitre->getChapitre() === $this) {
-                $utilisateurChapitre->setChapitre(null);
+            if ($utilisateurChapitre->getChapitres() === $this) {
+                $utilisateurChapitre->setChapitres(null);
             }
         }
 

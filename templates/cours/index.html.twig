@@ -7,22 +7,22 @@
 <section>
     <div class="cours-header">
         <div class="cours-header-container">
-            <h3 class="cours-titre">{{ chapitre.cours.titre }}</h3>
+            <h3 class="cours-titre">{{ cours.titre }}</h3>
             <div class="cours-info">
                 <div class="cours-info-left">
                     <div class="cours-temps-estime">
                         <img class="image-cours-temps-estime" src="{{ asset('images/clock-regular.png') }}">
-                        <p>{{ chapitre.cours.tempsEstime|trans ~ ' Heures' }}</p>
+                        <p>{{ cours.tempsEstime|trans ~ ' Heures' }}</p>
                     </div>
                     <div class="cours-niveau">
                         <img class="image-cours-niveau" src="{{ asset('images/signal-solid.png') }}">
-                        <p>{{ 'Niveau ' ~ chapitre.cours.niveau|trans }}</p>
+                        <p>{{ 'Niveau ' ~ cours.niveau|trans }}</p>
                     </div>
                 </div>
                 <div class="cours-info-right">
                     <div class="cours-date">
                         <img class="image-cours-date" src="{{ asset('images/pdf-circle.png') }}">
-                        <p>{{ chapitre.cours.date }}</p>
+                        <p>{{ cours.date }}</p>
                     </div>
                 </div>
             </div>
@@ -32,13 +32,13 @@
         <div class="chapitre-navigation">
             <img src="{{ asset('images/house-circle.png') }}">
 
-            {% for chapitreCours in chapitre.cours.getChapitres() %}
+            {% for chapitreCours in cours.getChapitres() %}
             {% if chapitre.position == chapitreCours.position %}
-            <div class="chapitre-navigation-bloc chapitre-courant" onclick="moveToChapter('{{ chapitreCours.id }}')">
+            <div class="chapitre-navigation-bloc chapitre-courant" onclick="moveToChapter('{{ cours.id }}', '{{ chapitreCours.position }}')">
                 <span class="chapitre-navigation-fleche"><img src="{{ asset('images/sort-up.png') }}"></span>
             </div>
             {% else %}
-            <div class="chapitre-navigation-bloc" onclick="moveToChapter('{{ chapitreCours.id }}')"></div>
+            <div class="chapitre-navigation-bloc" onclick="moveToChapter('{{ cours.id }}', '{{ chapitreCours.position }}')"></div>
             {% endif %}            
             {% endfor %}
 
@@ -47,17 +47,17 @@
         <h3>{{ chapitre.titre }}</h3>
         <p>{{ chapitre.contenu }}</p>
         <div class="chapitre-buttons-navigation">
-            <button id="valider-chapitre">Je valide ce chapitre et je passe au suivant</button>
+            <button id="valider-chapitre" onclick="validateChapter('{{ cours.id }}', '{{ chapitre.position }}')">Je valide ce chapitre et je passe au suivant</button>
             <div class="chapitre-precedent-suivant">
-                {% if chapitre.position == 0 %}
-                <button id="chapitre-precedent" disabled>Passer au chapitre précédent</button>
+                {% if chapitre.position != 0 %}
+                <button id="chapitre-precedent" onclick="previousChapter('{{ cours.id }}', '{{ chapitre.position }}')">Passer au chapitre précédent</button>
                 {% else %}
-                <button id="chapitre-precedent" onclick="previousChapter('{{ chapitre.id }}')">Passer au chapitre précédent</button>
+                <span style="visibility: hidden;"></span>
                 {% endif %}
-                {% if chapitre.position == chapitre.cours.getChapitres().count() - 1 %}
-                <button id="chapitre-suivant" disabled>Passer au chapitre suivant</button>
+                {% if chapitre.position != chapitre.cours.getChapitres().count() - 1 %}
+                <button id="chapitre-suivant" onclick="nextChapter('{{ cours.id }}', '{{ chapitre.position }}')">Passer au chapitre suivant</button>
                 {% else %}
-                <button id="chapitre-suivant" onclick="nextChapter('{{ chapitre.id }}')">Passer au chapitre suivant</button>
+                <span style="visibility: hidden;"></span>
                 {% endif %}
             </div>
         </div>

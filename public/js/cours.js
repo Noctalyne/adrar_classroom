@@ -1,16 +1,21 @@
-function nextChapter(currentID)
+function nextChapter(coursID, currentPosition)
 {
-    newID = parseInt(currentID) + 1;
-    document.location.href = `http://localhost:8000/cours/${newID}`;
+    newPosition = parseInt(currentPosition) + 1;
+    document.location.href = `http://localhost:8000/${coursID}/${newPosition}`;
 }
 
-function previousChapter(currentID)
+function previousChapter(coursID, currentPosition)
 {
-    newID = parseInt(currentID) - 1;
-    document.location.href = `http://localhost:8000/cours/${newID}`;
+    newPosition = parseInt(currentPosition) - 1;
+    document.location.href = `http://localhost:8000/${coursID}/${newPosition}`;
 }
 
-function moveToChapter(id)
+function moveToChapter(coursID, position)
 {
-    document.location.href = `http://localhost:8000/cours/${id}`;
+    document.location.href = `http://localhost:8000/${coursID}/${position}`;
+}
+
+function validateChapter(coursID, position)
+{
+    document.location.href = `http://localhost:8000/${coursID}/${position}/valider`;
 }

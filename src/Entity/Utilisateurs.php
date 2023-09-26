@@ -2,19 +2,21 @@
 
 namespace App\Entity;
 
-use App\Repository\UtilisateurRepository;
+use App\Repository\UtilisateursRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-#[ORM\Entity(repositoryClass: UtilisateurRepository::class)]
-class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
+#[ORM\Entity(repositoryClass: UtilisateursRepository::class)]
+#[UniqueEntity(fields: ['prenom'], message: 'There is already an account with this prenom')]
+class Utilisateurs implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
+    #[ORM\Column(name: "utilisateur_id")]
     private ?int $id = null;
 
     #[ORM\Column]
@@ -23,27 +25,27 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var string The hashed password
      */
-    #[ORM\Column]
-    private ?string $password = null;
+    #[ORM\Column(name: "utilisateur_mot_de_passe")]
+    private ?string $motDePasse = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, name: "utilisateur_nom")]
     private ?string $nom = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, name: "utilisateur_prenom")]
     private ?string $prenom = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, name: "utilisateur_email")]
     private ?string $email = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, name: "utilisateur_image", nullable: true)]
     private ?string $image = null;
 
-    #[ORM\OneToMany(mappedBy: 'utilisateur', targetEntity: UtilisateurChapitres::class)]
-    private Collection $utilisateurChapitres;
+    #[ORM\OneToMany(mappedBy: 'utilisateurs', targetEntity: UtilisateursChapitres::class)]
+    private Collection $utilisateursChapitres;
 
     public function __construct()
     {
-        $this->utilisateurChapitres = new ArrayCollection();
+        $this->utilisateursChapitres = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -85,12 +87,12 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function getPassword(): string
     {
-        return $this->password;
+        return $this->motDePasse;
     }
 
     public function setPassword(string $password): static
     {
-        $this->password = $password;
+        $this->motDePasse = $password;
 
         return $this;
     }
@@ -153,26 +155,26 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @return Collection<int, UtilisateurChapitres>
+     * @return Collection<int, UtilisateurChapitre>
      */
-    public function getUtilisateurChapitres(): Collection
+    public function getUtilisateursChapitres(): Collection
     {
-        return $this->utilisateurChapitres;
+        return $this->utilisateursChapitres;
     }
 
-    public function addUtilisateurChapitre(UtilisateurChapitres $utilisateurChapitre): static
+    public function addUtilisateurChapitre(UtilisateursChapitres $utilisateurChapitre): static
     {
-        if (!$this->utilisateurChapitres->contains($utilisateurChapitre)) {
-            $this->utilisateurChapitres->add($utilisateurChapitre);
+        if (!$this->utilisateursChapitres->contains($utilisateurChapitre)) {
+            $this->utilisateursChapitres->add($utilisateurChapitre);
             $utilisateurChapitre->setUtilisateur($this);
         }
 
         return $this;
     }
 
-    public function removeUtilisateurChapitre(UtilisateurChapitres $utilisateurChapitre): static
+    public function removeUtilisateurChapitre(UtilisateursChapitres $utilisateurChapitre): static
     {
-        if ($this->utilisateurChapitres->removeElement($utilisateurChapitre)) {
+        if ($this->utilisateursChapitres->removeElement($utilisateurChapitre)) {
             // set the owning side to null (unless already changed)
             if ($utilisateurChapitre->getUtilisateur() === $this) {
                 $utilisateurChapitre->setUtilisateur(null);

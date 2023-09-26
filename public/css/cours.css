@@ -80,7 +80,7 @@
 
 .chapitre-navigation-bloc
 {
-    background-color: grey;
+    background-color: #D9D9D9;
     border-width: 1px;
     border-style: solid;
     height: 20px;
@@ -114,7 +114,25 @@
     margin: 20px 0;
 }
 
+#chapitre-precedent, #chapitre-suivant
+{
+    height: 35px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #5584AC;
+    color: #5584AC;
+    background-color: white;
+    cursor: pointer;
+}
+
 #valider-chapitre
 {
     margin: 20px 25%;
+    color: white;
+    background-color: #5584AC;
+    border: 0;
+    height: 35px;
+    border-radius: 5px;
+    cursor: pointer;
 }
