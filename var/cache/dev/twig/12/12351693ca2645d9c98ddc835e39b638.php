@@ -32,7 +32,6 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
             'javascripts' => [$this, 'block_javascripts'],
             'body' => [$this, 'block_body'],
             'header' => [$this, 'block_header'],
-            'navbar' => [$this, 'block_navbar'],
             'content' => [$this, 'block_content'],
             'footer' => [$this, 'block_footer'],
         ];
@@ -74,7 +73,7 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
         ";
         // line 22
         $this->displayBlock('body', $context, $blocks);
-        // line 43
+        // line 44
         echo "    </body>
 </html>
 ";
@@ -171,20 +170,20 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
         ";
         // line 25
         $this->displayBlock('header', $context, $blocks);
-        // line 34
+        // line 33
         echo "        </header>
     <main>
         ";
-        // line 36
+        // line 35
         $this->displayBlock('content', $context, $blocks);
-        // line 37
+        // line 36
         echo "    </main>
         
         <footer>
         ";
-        // line 40
+        // line 39
         $this->displayBlock('footer', $context, $blocks);
-        // line 41
+        // line 42
         echo "        </footer>
         ";
         
@@ -206,13 +205,11 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
         // line 26
-        echo "
-    <nav class=\"nav\">        
-        ";
-        // line 28
-        $this->displayBlock('navbar', $context, $blocks);
-        // line 31
-        echo "    </nav>
+        echo "    
+
+
+
+
 
         ";
         
@@ -223,29 +220,7 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
 
     }
 
-    // line 28
-    public function block_navbar($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "navbar"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "navbar"));
-
-        // line 29
-        $this->loadTemplate("header.html.twig", "base.html.twig", 29)->display($context);
-        // line 30
-        echo "        ";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
-    }
-
-    // line 36
+    // line 35
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -263,7 +238,7 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
 
     }
 
-    // line 40
+    // line 39
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -273,7 +248,9 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        echo " ";
+        echo " 
+
+        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -289,7 +266,7 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
 
     public function getDebugInfo()
     {
-        return array (  267 => 40,  249 => 36,  239 => 30,  237 => 29,  227 => 28,  215 => 31,  213 => 28,  209 => 26,  199 => 25,  188 => 41,  186 => 40,  181 => 37,  179 => 36,  175 => 34,  173 => 25,  169 => 23,  159 => 22,  146 => 15,  136 => 14,  122 => 9,  119 => 8,  109 => 7,  90 => 5,  78 => 43,  76 => 22,  69 => 17,  67 => 14,  64 => 13,  62 => 7,  57 => 5,  51 => 1,);
+        return array (  242 => 39,  224 => 35,  208 => 26,  198 => 25,  187 => 42,  185 => 39,  180 => 36,  178 => 35,  174 => 33,  172 => 25,  168 => 23,  158 => 22,  145 => 15,  135 => 14,  121 => 9,  118 => 8,  108 => 7,  89 => 5,  77 => 44,  75 => 22,  68 => 17,  66 => 14,  63 => 13,  61 => 7,  56 => 5,  50 => 1,);
     }
 
     public function getSourceContext()
@@ -319,12 +296,11 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
 
             <header>
         {% block header %}
+    
 
-    <nav class=\"nav\">        
-        {% block navbar %}
-{% include 'header.html.twig'%}
-        {% endblock %}
-    </nav>
+
+
+
 
         {% endblock %}
         </header>
@@ -333,11 +309,13 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
     </main>
         
         <footer>
-        {% block footer %} {% endblock %}
+        {% block footer %} 
+
+        {% endblock %}
         </footer>
         {% endblock %}
     </body>
 </html>
-", "base.html.twig", "C:\\Users\\Antho\\Desktop\\DevWeb\\Symfony\\Adrar\\templates\\base.html.twig");
+", "base.html.twig", "C:\\wamp\\www\\Adrar\\templates\\base.html.twig");
     }
 }

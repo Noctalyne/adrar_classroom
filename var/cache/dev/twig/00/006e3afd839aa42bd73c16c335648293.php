@@ -27,7 +27,6 @@ class __TwigTemplate_522617cdd1548be606f63f93b92ed3a9 extends Template
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
-            'header' => [$this, 'block_header'],
         ];
     }
 
@@ -87,11 +86,8 @@ class __TwigTemplate_522617cdd1548be606f63f93b92ed3a9 extends Template
 
         // line 7
         echo "
-";
-        // line 8
-        $this->displayBlock('header', $context, $blocks);
-        // line 9
-        echo "
+
+
 <div class=\"container\">
     <div class=\"col1\">
         <form method=\"post\" action=\"";
@@ -190,25 +186,6 @@ class __TwigTemplate_522617cdd1548be606f63f93b92ed3a9 extends Template
 
     }
 
-    // line 8
-    public function block_header($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
-
-        echo " ";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
-    }
-
     public function getTemplateName()
     {
         return "security/login.html.twig";
@@ -221,7 +198,7 @@ class __TwigTemplate_522617cdd1548be606f63f93b92ed3a9 extends Template
 
     public function getDebugInfo()
     {
-        return array (  194 => 8,  179 => 63,  163 => 50,  147 => 37,  136 => 29,  127 => 22,  119 => 19,  116 => 18,  114 => 17,  111 => 16,  105 => 14,  103 => 13,  99 => 12,  94 => 9,  92 => 8,  89 => 7,  79 => 6,  60 => 3,  37 => 1,);
+        return array (  175 => 63,  159 => 50,  143 => 37,  132 => 29,  123 => 22,  115 => 19,  112 => 18,  110 => 17,  107 => 16,  101 => 14,  99 => 13,  95 => 12,  88 => 7,  78 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -233,7 +210,7 @@ class __TwigTemplate_522617cdd1548be606f63f93b92ed3a9 extends Template
 
 {% block body %}
 
-{% block header %} {% endblock %}
+
 
 <div class=\"container\">
     <div class=\"col1\">
@@ -293,6 +270,6 @@ class __TwigTemplate_522617cdd1548be606f63f93b92ed3a9 extends Template
 
 </div>
 {% endblock %}
-", "security/login.html.twig", "C:\\Users\\Antho\\Desktop\\DevWeb\\Symfony\\Adrar\\templates\\security\\login.html.twig");
+", "security/login.html.twig", "C:\\wamp\\www\\Adrar\\templates\\security\\login.html.twig");
     }
 }

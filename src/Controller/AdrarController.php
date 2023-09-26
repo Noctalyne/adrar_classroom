@@ -15,4 +15,12 @@ class AdrarController extends AbstractController
             'controller_name' => 'AdrarController',
         ]);
     }
+    
+    #[Route('/NaN', name: 'app_nan')]
+    public function nan(): Response
+    {
+        return $this->render('adrar/index.html.twig', [
+            'controller_name' => 'NaN',
+        ]);
+    }
 }

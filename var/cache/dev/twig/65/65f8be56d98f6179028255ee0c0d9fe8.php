@@ -27,7 +27,6 @@ class __TwigTemplate_f69f8f3c04fc6ec6404aaff99899e474 extends Template
         $this->parent = false;
 
         $this->blocks = [
-            'navbar' => [$this, 'block_navbar'],
         ];
     }
 
@@ -41,26 +40,8 @@ class __TwigTemplate_f69f8f3c04fc6ec6404aaff99899e474 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "header.html.twig"));
 
         // line 1
-        $this->displayBlock('navbar', $context, $blocks);
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-    }
-
-    public function block_navbar($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "navbar"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "navbar"));
-
-        // line 2
-        echo "        <div class=\"header\">
+        echo "
+        <div class=\"header\">
     <img src=\"";
         // line 3
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/adrar-classrooms-logoLogo.png"), "html", null, true);
@@ -99,14 +80,47 @@ class __TwigTemplate_f69f8f3c04fc6ec6404aaff99899e474 extends Template
         <input type=\"text\" name=\"q\" placeholder=\"Recherche...\" />
     </form>
 </div>
-<button type=\"button\" class=\"login\" onclick=\"location.href='/login'\">Se connecter</button>
-</div>
+      ";
+        // line 20
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 20, $this->source); })()), "user", [], "any", false, false, false, 20)) {
+            // line 21
+            echo "        <div class=\"user-info\">
+            <p>";
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 22, $this->source); })()), "user", [], "any", false, false, false, 22), "username", [], "any", false, false, false, 22), "html", null, true);
+            echo "</p>
+            <img src=\"";
+            // line 23
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/Ellipse 5.png"), "html", null, true);
+            echo "\" alt=\"Avatar\" class=\"avatar\" />
+            
+            <form method=\"post\" action=\"";
+            // line 25
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "\">
+                <button type=\"submit\" class=\"logout\">Déconnexion</button>
+            </form>
+        </div>
+    ";
+        } else {
+            // line 30
+            echo "        
+        <form method=\"post\" action=\"";
+            // line 31
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            echo "\">
+            <button type=\"submit\" class=\"login\">Se connecter</button>
+        </form>
+    ";
+        }
+        // line 35
+        echo "</div>
 ";
         
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
         
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
     }
 
@@ -115,14 +129,19 @@ class __TwigTemplate_f69f8f3c04fc6ec6404aaff99899e474 extends Template
         return "header.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  96 => 15,  91 => 13,  85 => 10,  80 => 8,  76 => 7,  72 => 6,  66 => 3,  63 => 2,  44 => 1,);
+        return array (  117 => 35,  110 => 31,  107 => 30,  99 => 25,  94 => 23,  90 => 22,  87 => 21,  85 => 20,  77 => 15,  72 => 13,  66 => 10,  61 => 8,  57 => 7,  53 => 6,  47 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% block navbar %}
+        return new Source("
         <div class=\"header\">
     <img src=\"{{ asset('images/adrar-classrooms-logoLogo.png') }}\" alt=\"Logo\" class=\"logo\" />
     <h1>Classrooms</h1>
@@ -141,8 +160,22 @@ class __TwigTemplate_f69f8f3c04fc6ec6404aaff99899e474 extends Template
         <input type=\"text\" name=\"q\" placeholder=\"Recherche...\" />
     </form>
 </div>
-<button type=\"button\" class=\"login\" onclick=\"location.href='/login'\">Se connecter</button>
+      {% if app.user %}
+        <div class=\"user-info\">
+            <p>{{ app.user.username }}</p>
+            <img src=\"{{ asset('images/Ellipse 5.png') }}\" alt=\"Avatar\" class=\"avatar\" />
+            
+            <form method=\"post\" action=\"{{ path('app_logout') }}\">
+                <button type=\"submit\" class=\"logout\">Déconnexion</button>
+            </form>
+        </div>
+    {% else %}
+        
+        <form method=\"post\" action=\"{{ path('app_login') }}\">
+            <button type=\"submit\" class=\"login\">Se connecter</button>
+        </form>
+    {% endif %}
 </div>
-{% endblock %}", "header.html.twig", "C:\\Users\\Antho\\Desktop\\DevWeb\\Symfony\\Adrar\\templates\\header.html.twig");
+", "header.html.twig", "C:\\wamp\\www\\Adrar\\templates\\header.html.twig");
     }
 }

@@ -48,6 +48,39 @@ cursor: pointer;
     align-items: center;
 }
 
+.login{
+    border-radius: 4px;
+    border-color: #5584AC;
+    background-color: black;
+    color: #5584AC;
+    font-size: 18pt;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info p {
+    margin-right: 10px; 
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; 
+    margin-right: 3%; 
+}
+
+.user-info button {
+    margin-left: 5%; 
+    border-radius: 4px;
+    border-color: #5584AC;
+    background-color: black;
+    color: #5584AC;
+    font-size: 18pt;
+}
+
 body{
     overflow: auto;
 }
@@ -162,11 +195,13 @@ h1{
     font-size: 14pt;
 }
 
-.footer .image-container{
+.footer button{
     display: block;
     max-width: 5%;
     position: relative;
     background-color: #5584AC;
+    color: #5584AC;
+    border-color: #5584AC;
     margin: auto;
     margin-top: 3%;
 }
@@ -182,13 +217,6 @@ h1{
     margin-left: -20px ;
 }
 
-.login{
-    border-radius: 4px;
-    border-color: #5584AC;
-    background-color: black;
-    color: #5584AC;
-    font-size: 18pt;
-}
 
 /* Style connexion */
 
