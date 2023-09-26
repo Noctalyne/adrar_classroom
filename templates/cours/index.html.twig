@@ -33,13 +33,15 @@
             <img src="{{ asset('images/house-circle.png') }}">
 
             {% for chapitreCours in cours.getChapitres() %}
+
             {% if chapitre.position == chapitreCours.position %}
-            <div class="chapitre-navigation-bloc chapitre-courant" onclick="moveToChapter('{{ cours.id }}', '{{ chapitreCours.position }}')">
+            <div class="chapitre-navigation-bloc chapitre-courant {{ utilisateurChapitre.chapitreTermine ? 'chapitre-termine' : '' }}" onclick="moveToChapter('{{ cours.id }}', '{{ chapitreCours.position }}')">
                 <span class="chapitre-navigation-fleche"><img src="{{ asset('images/sort-up.png') }}"></span>
             </div>
             {% else %}
-            <div class="chapitre-navigation-bloc" onclick="moveToChapter('{{ cours.id }}', '{{ chapitreCours.position }}')"></div>
-            {% endif %}            
+            <div class="chapitre-navigation-bloc {{ utilisateurChapitre.chapitreTermine ? 'chapitre-termine' : '' }}" onclick="moveToChapter('{{ cours.id }}', '{{ chapitreCours.position }}')"></div>
+            {% endif %}     
+
             {% endfor %}
 
             <img src="{{ asset('images/certificate-circle.png') }}">

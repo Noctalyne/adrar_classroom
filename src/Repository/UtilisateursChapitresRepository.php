@@ -23,13 +23,13 @@ class UtilisateursChapitresRepository extends ServiceEntityRepository
         parent::__construct($registry, UtilisateursChapitres::class);
     }
 
-    public function findByForeignKey(Utilisateurs $utilisateur, Chapitres $chapitre) : UtilisateursChapitres
+    public function findByForeignKey(Utilisateurs $utilisateur, Chapitres $chapitre) : ?UtilisateursChapitres
     {
         return $this->createQueryBuilder('uc')
-            ->andWhere('uc.utilisateur_id = :utilisateur_id')
-            ->setParameter('utilisateur_id', $utilisateur->getId())
-            ->andWhere('uc.chapitre_id = :chapitre_id')
-            ->setParameter('chapitre_id', $chapitre->getId())
+            ->andWhere('uc.utilisateur = :utilisateur')
+            ->setParameter('utilisateur', $utilisateur)
+            ->andWhere('uc.chapitre = :chapitre')
+            ->setParameter('chapitre', $chapitre)
             ->getQuery()
             ->getOneOrNullResult();
     }

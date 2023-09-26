@@ -126,6 +126,11 @@
     cursor: pointer;
 }
 
+.chapitre-termine
+{
+    background-color: green;
+}
+
 #valider-chapitre
 {
     margin: 20px 25%;

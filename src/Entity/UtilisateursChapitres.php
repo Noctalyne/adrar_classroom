@@ -23,7 +23,7 @@ class UtilisateursChapitres
     private ?Chapitres $chapitre = null;
 
     #[ORM\Column(type: Types::SMALLINT, name: "utilisateur_chapitre_termine")]
-    private ?int $termine = null;
+    private ?int $chapitreTermine = null;
 
     public function getId(): ?int
     {
@@ -56,12 +56,12 @@ class UtilisateursChapitres
 
     public function getChapitreTermine(): ?int
     {
-        return $this->termine;
+        return $this->chapitreTermine;
     }
 
     public function setChapitreTermine(int $chapitreTermine): static
     {
-        $this->termine = $chapitreTermine;
+        $this->chapitreTermine = $chapitreTermine;
 
         return $this;
     }

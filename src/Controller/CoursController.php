@@ -38,6 +38,7 @@ class CoursController extends AbstractController
                 $utilisateurChapitre = new UtilisateursChapitres();
                 $utilisateurChapitre->setUtilisateur($user);
                 $utilisateurChapitre->setChapitre($chapitre);
+                $utilisateurChapitre->setChapitreTermine(0);
                 
                 $entityManager->persist($utilisateurChapitre);
                 $entityManager->flush();
@@ -62,14 +63,15 @@ class CoursController extends AbstractController
 
         $utilisateurChapitre = null;
 
-        if($user != null && gettype($user) == Utilisateurs::class)
+        if($user != null && $user instanceof Utilisateurs)
         {
-            $utilisateurChapitre = $entityManager->getRepository(UtilisateursChapitres::class)->findByForeignKey($chapitre, $user);
+            $utilisateurChapitre = $entityManager->getRepository(UtilisateursChapitres::class)->findByForeignKey( $user, $chapitre);
             
-            if($utilisateurChapitre == null)
+            if($utilisateurChapitre != null)
             {
                 $utilisateurChapitre->setChapitreTermine(1);
 
+                $entityManager->persist($utilisateurChapitre);
                 $entityManager->flush();
             }
         }
