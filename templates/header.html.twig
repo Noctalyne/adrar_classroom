@@ -3,17 +3,17 @@
     <img src="{{ asset('images/adrar-classrooms-logoLogo.png') }}" alt="Logo" class="logo" />
     <h1>Classrooms</h1>
         <ul class="navbar">
-            <a href="{{ path('app_adrar') }}">Accueil</a>
-            <a href="{{ path('app_adrar') }}">Formations</a>
-            <a href="{{ path('app_adrar') }}">Administration</a>
+            <a href="{{ path('app_index') }}">Accueil</a>
+            <a href="{{ path('app_index') }}">Formations</a>
+            <a href="{{ path('app_index') }}">Administration</a>
         </ul>
-             <img src="{{ asset('images/magnifying-glass-solid.svg') }}" alt="icon" class="icon" style=" fill: #ff0000; cursor: pointer;" />
+             <img src="{{ asset('images/magnifying-glass-solid.svg') }}" alt="icon" class="icon"  />
 
-<div id="search-container" style="display: none;">
-    <form action="{{ path('app_adrar') }}" method="POST">
-     <button type="button" id="search-button">
-            <img src="{{ asset('images/magnifying-glass-solid.svg') }}" alt="icon" class="icon2" style=' cursor: pointer;' />
-        </button>
+<div id="search-container">
+    <form action="{{ path('app_index') }}" method="POST">
+     <div id="search-button">
+            <img src="{{ asset('images/magnifying-glass-solid.svg') }}" alt="icon" class="icon2"  />
+        </div>
         <input type="text" name="q" placeholder="Recherche..." />
     </form>
 </div>

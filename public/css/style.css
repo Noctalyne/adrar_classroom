@@ -31,6 +31,23 @@ body{
     font-size: 20pt;
 }
 
+
+.icon .icon2{
+fill: #ffffff;
+cursor: pointer;
+}
+
+#search-container{
+    display: none;
+    justify-content: center;
+}
+
+#search-container form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 body{
     overflow: auto;
 }

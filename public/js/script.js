@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
     icon.addEventListener('click', function() {
         if (searchContainer.style.display === 'none' || searchContainer.style.display === '') {
             searchContainer.style.display = 'block';
+
+            icon.style.display = 'none';
             
         } else {
             searchContainer.style.display = 'none';
@@ -21,6 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const inputField = searchContainer.querySelector('input[name="q"]');
         const searchValue = inputField.value;
+
+
 
         window.location.href = '{{ path('/') }}?q=' + encodeURIComponent(searchValue);
     });
