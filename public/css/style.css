@@ -2,7 +2,7 @@
 
 body {
     margin: 0px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif; /* Modifie la police de tous le document */
 }
 
 .header{
