@@ -1,0 +1,53 @@
+/* Affichage de toute la liste cours */
+#liste_cours {
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+
+/* Affichage d'une carte du cours */
+#miniature_cours {
+    border: solid black 1px;
+    margin: 10px;
+    padding: 5px;
+    width: 50%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+}
+#miniature_cours p {
+    margin :0px; 
+    font-size:15px;
+}
+
+
+.img_cours {
+    align-self: center;  /* aligne l'image au centre */
+    margin: 10px;
+}
+
+
+
+
+/* PARTIE DROITE DE LA CARTE */
+.infos_cours {
+    width: 50%;
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.div1 { grid-area: 1 / 1 / 2 / 3; }
+
+.div2 { grid-area: 2 / 1 / 3 / 3; }
+
+.div3 { grid-area: 2 / 3 / 3 / 5; }
+
+.div4 { grid-area: 3 / 1 / 4 / 4; }

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{# {% include './composants/carte_cours.html.twig' %} #}
+
+{% block title %} Nos cours {% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/card_cours.css') }}"/>
+{% endblock %}
+    
+
+
+
+{% block body %}
+
+    <div id="liste_cours">
+
+        {% include './composants/carte_cours.html.twig' %}
+
+        {% include './composants/carte_cours.html.twig' %}
+
+        {# {% include './composants/carte_cours.html.twig' %}
+
+        {% include './composants/carte_cours.html.twig' %}
+
+        {% include './composants/carte_cours.html.twig' %}
+
+        {% include './composants/carte_cours.html.twig' %} #}
+    </div>
+
+{% endblock %}
+
+
+
+
+
+

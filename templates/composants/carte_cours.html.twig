@@ -1,0 +1,38 @@
+
+
+{% block carte_cours %}
+    <div id="miniature_cours">
+
+        <div class="img_cours">
+            <img src="{{ asset('images/code.jpg') }}" alt="Logo" style="width:400px; height:200px;"/>
+        </div>            
+
+        <div class="infos_cours" >
+
+            <div class="div1 ">
+                <p style="color:#00BFFF; font-size:12px;"> COURS </p>
+                <p style="margin :0px;"> Titre </p>        
+            </div>
+        
+                
+            <div class="div2">                
+                <p> 
+                    <img src="{{ asset('images/clock-regularicons.svg') }}" alt="Logo" class="logo" style="width:10px; height:10px;" />
+                    Niveau
+                </p>  
+            </div>
+
+            <div class="div3">                      
+                <p> 
+                    <img src="{{ asset('images/clock-regularicons.svg') }}" alt="Logo" class="logo" style="width:10px; height:10px;"/>
+                    Temps 
+                </p>      
+            </div>          
+
+
+            <div class="div4">
+                <p> SYNOPSIS </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
