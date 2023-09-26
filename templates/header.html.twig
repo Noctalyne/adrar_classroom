@@ -1,3 +1,7 @@
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/header.css')}}">
+ {% endblock %}
+
 
         <div class="header">
     <img src="{{ asset('images/adrar-classrooms-logoLogo.png') }}" alt="Logo" class="logo" />
@@ -10,26 +14,12 @@
              <img src="{{ asset('images/magnifying-glass-solid.svg') }}" alt="icon" class="icon"  />
 
 <div id="search-container">
-    <form action="{{ path('app_index') }}" method="POST">
+    <form action="{{ path('app_index') }}" method="POST" >
      <div id="search-button">
             <img src="{{ asset('images/magnifying-glass-solid.svg') }}" alt="icon" class="icon2"  />
         </div>
         <input type="text" name="q" placeholder="Recherche..." />
     </form>
 </div>
-      {% if app.user %}
-        <div class="user-info">
-            <p>{{ app.user.username }}</p>
-            <img src="{{ asset('images/Ellipse 5.png') }}" alt="Avatar" class="avatar" />
-            
-            <form method="post" action="{{ path('app_logout') }}">
-                <button type="submit" class="logout">Déconnexion</button>
-            </form>
-        </div>
-    {% else %}
-        
-        <form method="post" action="{{ path('app_login') }}">
-            <button type="submit" class="login">Se connecter</button>
-        </form>
-    {% endif %}
+<button type="button" class="login" onclick="location.href='/login'">Se connecter</button>
 </div>

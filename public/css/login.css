@@ -1,0 +1,129 @@
+/* Style connexion */
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    height: 100vh; 
+  }
+
+ /* Colonne de gauche */
+
+ /* Style globale */
+.col1{
+    display: block;
+    justify-content: center;
+    background-color: black;
+    max-height: 100%;
+    color: white;
+    text-align: center;
+}
+
+.col1 h1{
+    color: #5584AC;
+    margin-bottom: 10%;
+    margin-top: 5%;
+    font-size: 30pt;
+    font-weight: bold;
+}
+
+.col1 h2{
+    font-size: 25pt;
+}
+
+/* Formulaire */
+
+.form{
+    display: block;
+    justify-content: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align:start;
+    margin-top: 5%;
+    font-size: 20pt;
+}
+
+.form-control{
+    width: 100%;
+    height: 50px;
+    border-radius: 4px;
+    background-color: rgb(0, 0, 0);
+    margin-bottom: 8%;
+    color: #ffffff;
+
+}
+
+.btn{
+    background-color: #5584AC;
+    border-radius: 4px;
+    border-color: #5584AC;
+    color: white;
+    width: 100%;
+    height: 50px;
+    margin-top: 5%;
+}
+
+/* Partie basse avec la ligne */
+.text-with-lines {
+    display: flex;
+    align-items: center;
+    font-size: 14pt;
+    margin-top: 8%;
+}
+
+.left-line,
+.right-line {
+    flex-grow: 1;
+    height: 2px; 
+    background-color: #ffffff; 
+}
+
+.text {
+    padding: 0 10px; 
+}
+
+.icon-google {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+span{
+
+    width: 50px; 
+    height: 50px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span .google {
+    max-width: 80%; 
+    z-index: 1;
+}
+/* Colonne de droite */
+.col2{
+    background-color: #8CC04D;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 15%;
+}
+
+.col2 h2{
+    font-size: 25pt;
+}
+
+.col2 p {
+    font-size: 14pt;
+}
+
+.col2 img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+
+}
+
+
+

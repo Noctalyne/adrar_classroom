@@ -32,4 +32,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //Footer
 
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollToTopButton = document.getElementById("scrollToTopButton");
 
+    scrollToTopButton.addEventListener("click", function () {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});

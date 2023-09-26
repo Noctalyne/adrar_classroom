@@ -1,0 +1,35 @@
+.footer{
+    background-color: black;
+    padding-top: 7%;
+    color: white;
+    display: block;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer p{
+    margin-top: 0%;
+    font-size: 14pt;
+}
+
+.footer button{
+    display: block;
+    max-width: 5%;
+    position: relative;
+    background-color: #5584AC;
+    color: #5584AC;
+    border-color: #5584AC;
+    margin: auto;
+    margin-top: 3%;
+}
+
+.footer .image2 .image3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.footer .image2 .image3 {
+    z-index: 1; 
+    margin-left: -20px ;
+}

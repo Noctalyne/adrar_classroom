@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Login{% endblock %}
-
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/login.css')}}">
+ {% endblock %}
 
 {% block body %}
 
@@ -60,7 +62,7 @@
     <h2>J'étais musicien indépendant, mais la COVID a tout stoppé. 
     On m'a parlé d'ADRAR Classrooms, ça m'a ouvert des opportunités professionnelles insoupçonnées."</h2>
     <p>Alexandre - Développeur Full-Stack Junior</p>
-    <img src="{{ asset('images/image-removebg-preview 1.png') }}" alt="image" class="undraw" />
+    <img src="{{ asset('images/image-removebg-preview 1.png') }}" alt="image"/>
     </div>
 
 </div>
