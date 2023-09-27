@@ -140,13 +140,17 @@ class __TwigTemplate_820bcd51bfebac2a7d3d312ce4742537 extends Template
 
 <div class=\"thirdDiv\">
     <h2>Témoignages et sourires</h2>
-    <img src=\"";
+    <img src=";
         // line 48
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/Ellipse 4.png"), "html", null, true);
-        echo "\" alt=\"image\" class=\"Ellipse4\" />
-    <h2>Austin</h2>
-    <p>\"Too easy\"</p>
-        <div class=\"chevrons\">
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 48, $this->source); })()), "user", [], "any", false, false, false, 48), "avatar", [], "any", false, false, false, 48), "html", null, true);
+        echo " alt=\"image\" class=\"Ellipse4\" />
+    <h2>";
+        // line 49
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 49, $this->source); })()), "user", [], "any", false, false, false, 49), "username", [], "any", false, false, false, 49), "html", null, true);
+        echo "</h2>
+    ";
+        // line 51
+        echo "        <div class=\"chevrons\">
             <img src=\"";
         // line 52
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/circle-chevron-down-solid 2.svg"), "html", null, true);
@@ -236,7 +240,7 @@ class __TwigTemplate_820bcd51bfebac2a7d3d312ce4742537 extends Template
 
     public function getDebugInfo()
     {
-        return array (  217 => 60,  215 => 59,  202 => 57,  191 => 10,  189 => 9,  186 => 8,  176 => 7,  165 => 62,  163 => 57,  156 => 53,  152 => 52,  145 => 48,  134 => 40,  125 => 34,  116 => 28,  107 => 22,  95 => 12,  93 => 7,  90 => 6,  80 => 5,  61 => 3,  38 => 1,);
+        return array (  221 => 60,  219 => 59,  206 => 57,  195 => 10,  193 => 9,  190 => 8,  180 => 7,  169 => 62,  167 => 57,  160 => 53,  156 => 52,  153 => 51,  149 => 49,  145 => 48,  134 => 40,  125 => 34,  116 => 28,  107 => 22,  95 => 12,  93 => 7,  90 => 6,  80 => 5,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -288,9 +292,9 @@ class __TwigTemplate_820bcd51bfebac2a7d3d312ce4742537 extends Template
 
 <div class=\"thirdDiv\">
     <h2>Témoignages et sourires</h2>
-    <img src=\"{{ asset('images/Ellipse 4.png') }}\" alt=\"image\" class=\"Ellipse4\" />
-    <h2>Austin</h2>
-    <p>\"Too easy\"</p>
+    <img src={{ app.user.avatar }} alt=\"image\" class=\"Ellipse4\" />
+    <h2>{{ app.user.username }}</h2>
+    {# <p>{{  }}</p> #}
         <div class=\"chevrons\">
             <img src=\"{{ asset('images/circle-chevron-down-solid 2.svg') }}\" alt=\"icon\" class=\"chevron1\" style=\" fill: #ff0000; cursor: pointer;\" />
             <img src=\"{{ asset('images/circle-chevron-down-solid 2.svg') }}\" alt=\"icon\" class=\"chevron2\" style=\"fill: #ff0000; cursor: pointer;\" />
@@ -304,6 +308,6 @@ class __TwigTemplate_820bcd51bfebac2a7d3d312ce4742537 extends Template
     {% endblock %}
 
 {% endblock %}
-", "adrar/index.html.twig", "C:\\wamp\\www\\Adrar\\templates\\adrar\\index.html.twig");
+", "adrar/index.html.twig", "C:\\Users\\Antho\\Desktop\\DevWeb\\Symfony\\Adrar\\templates\\adrar\\index.html.twig");
     }
 }

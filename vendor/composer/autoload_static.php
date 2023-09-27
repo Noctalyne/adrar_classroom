@@ -124,6 +124,10 @@ class ComposerStaticInitdd5e49b3d76a01097ac987da0a109c07
             'Monolog\\' => 8,
             'Masterminds\\' => 12,
         ),
+        'F' => 
+        array (
+            'Faker\\' => 6,
+        ),
         'E' => 
         array (
             'Egulias\\EmailValidator\\' => 23,
@@ -485,6 +489,10 @@ class ComposerStaticInitdd5e49b3d76a01097ac987da0a109c07
         'Masterminds\\' => 
         array (
             0 => __DIR__ . '/..' . '/masterminds/html5/src',
+        ),
+        'Faker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fakerphp/faker/src/Faker',
         ),
         'Egulias\\EmailValidator\\' => 
         array (

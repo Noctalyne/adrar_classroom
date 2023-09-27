@@ -45,9 +45,9 @@
 
 <div class="thirdDiv">
     <h2>Témoignages et sourires</h2>
-    <img src="{{ asset('images/Ellipse 4.png') }}" alt="image" class="Ellipse4" />
-    <h2>Austin</h2>
-    <p>"Too easy"</p>
+    <img src={{ app.user.avatar }} alt="image" class="Ellipse4" />
+    <h2>{{ app.user.username }}</h2>
+    {# <p>{{  }}</p> #}
         <div class="chevrons">
             <img src="{{ asset('images/circle-chevron-down-solid 2.svg') }}" alt="icon" class="chevron1" style=" fill: #ff0000; cursor: pointer;" />
             <img src="{{ asset('images/circle-chevron-down-solid 2.svg') }}" alt="icon" class="chevron2" style="fill: #ff0000; cursor: pointer;" />

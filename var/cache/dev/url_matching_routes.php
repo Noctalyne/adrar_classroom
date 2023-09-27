@@ -16,6 +16,7 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/index' => [[['_route' => 'app_index', '_controller' => 'App\\Controller\\AdrarController::index'], null, null, null, false, false, null]],
         '/NaN' => [[['_route' => 'app_nan', '_controller' => 'App\\Controller\\AdrarController::nan'], null, null, null, false, false, null]],
+        '/avis' => [[['_route' => 'app_avis', '_controller' => 'App\\Controller\\AvisController::generateAvis'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
     ],

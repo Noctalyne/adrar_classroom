@@ -21,5 +21,19 @@
         <input type="text" name="q" placeholder="Recherche..." />
     </form>
 </div>
-<button type="button" class="login" onclick="location.href='/login'">Se connecter</button>
+{% if app.user %}
+        <div class="user-info">
+            <p>{{ app.user.username }}</p>
+            <img src={{ app.user.avatar }} alt="Avatar" class="avatar" />
+
+            <form method="post" action="{{ path('app_logout') }}">
+                <button type="submit" class="logout">Déconnexion</button>
+            </form>
+        </div>
+    {% else %}
+
+        <form method="post" action="{{ path('app_login') }}">
+            <button type="submit" class="login">Se connecter</button>
+        </form>
+    {% endif %}
 </div>

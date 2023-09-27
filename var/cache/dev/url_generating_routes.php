@@ -18,6 +18,7 @@ return [
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     'app_index' => [[], ['_controller' => 'App\\Controller\\AdrarController::index'], [], [['text', '/index']], [], [], []],
     'app_nan' => [[], ['_controller' => 'App\\Controller\\AdrarController::nan'], [], [['text', '/NaN']], [], [], []],
+    'app_avis' => [[], ['_controller' => 'App\\Controller\\AvisController::generateAvis'], [], [['text', '/avis']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/']], [], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
 ];

@@ -3,7 +3,7 @@
         'name' => 'symfony/skeleton',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '601ad2e28632f2f8f0e9682a640b7677020bbae2',
+        'reference' => '136c2e9af9bc9bef05fb15fd398e972286f51733',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -171,6 +171,15 @@
             'install_path' => __DIR__ . '/../egulias/email-validator',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'fakerphp/faker' => array(
+            'pretty_version' => 'v1.23.0',
+            'version' => '1.23.0.0',
+            'reference' => 'e3daa170d00fde61ea7719ef47bb09bb8f1d9b01',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../fakerphp/faker',
+            'aliases' => array(),
+            'dev_requirement' => true,
         ),
         'masterminds/html5' => array(
             'pretty_version' => '2.8.1',
@@ -1148,7 +1157,7 @@
         'symfony/skeleton' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '601ad2e28632f2f8f0e9682a640b7677020bbae2',
+            'reference' => '136c2e9af9bc9bef05fb15fd398e972286f51733',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

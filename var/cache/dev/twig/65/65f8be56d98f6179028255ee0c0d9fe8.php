@@ -84,8 +84,41 @@ class __TwigTemplate_f69f8f3c04fc6ec6404aaff99899e474 extends Template
         <input type=\"text\" name=\"q\" placeholder=\"Recherche...\" />
     </form>
 </div>
-<button type=\"button\" class=\"login\" onclick=\"location.href='/login'\">Se connecter</button>
-</div>
+";
+        // line 24
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 24, $this->source); })()), "user", [], "any", false, false, false, 24)) {
+            // line 25
+            echo "        <div class=\"user-info\">
+            <p>";
+            // line 26
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 26, $this->source); })()), "user", [], "any", false, false, false, 26), "username", [], "any", false, false, false, 26), "html", null, true);
+            echo "</p>
+            <img src=";
+            // line 27
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 27, $this->source); })()), "user", [], "any", false, false, false, 27), "avatar", [], "any", false, false, false, 27), "html", null, true);
+            echo " alt=\"Avatar\" class=\"avatar\" />
+
+            <form method=\"post\" action=\"";
+            // line 29
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "\">
+                <button type=\"submit\" class=\"logout\">Déconnexion</button>
+            </form>
+        </div>
+    ";
+        } else {
+            // line 34
+            echo "
+        <form method=\"post\" action=\"";
+            // line 35
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            echo "\">
+            <button type=\"submit\" class=\"login\">Se connecter</button>
+        </form>
+    ";
+        }
+        // line 39
+        echo "</div>
 ";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -130,7 +163,7 @@ class __TwigTemplate_f69f8f3c04fc6ec6404aaff99899e474 extends Template
 
     public function getDebugInfo()
     {
-        return array (  109 => 2,  99 => 1,  81 => 19,  76 => 17,  70 => 14,  65 => 12,  61 => 11,  57 => 10,  51 => 7,  46 => 4,  44 => 1,);
+        return array (  142 => 2,  132 => 1,  121 => 39,  114 => 35,  111 => 34,  103 => 29,  98 => 27,  94 => 26,  91 => 25,  89 => 24,  81 => 19,  76 => 17,  70 => 14,  65 => 12,  61 => 11,  57 => 10,  51 => 7,  46 => 4,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -158,7 +191,21 @@ class __TwigTemplate_f69f8f3c04fc6ec6404aaff99899e474 extends Template
         <input type=\"text\" name=\"q\" placeholder=\"Recherche...\" />
     </form>
 </div>
-<button type=\"button\" class=\"login\" onclick=\"location.href='/login'\">Se connecter</button>
+{% if app.user %}
+        <div class=\"user-info\">
+            <p>{{ app.user.username }}</p>
+            <img src={{ app.user.avatar }} alt=\"Avatar\" class=\"avatar\" />
+
+            <form method=\"post\" action=\"{{ path('app_logout') }}\">
+                <button type=\"submit\" class=\"logout\">Déconnexion</button>
+            </form>
+        </div>
+    {% else %}
+
+        <form method=\"post\" action=\"{{ path('app_login') }}\">
+            <button type=\"submit\" class=\"login\">Se connecter</button>
+        </form>
+    {% endif %}
 </div>
 ", "header.html.twig", "C:\\Users\\Antho\\Desktop\\DevWeb\\Symfony\\Adrar\\templates\\header.html.twig");
     }
