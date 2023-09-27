@@ -23,32 +23,38 @@ class CoursController extends AbstractController
     #[Route('/{cours}/{position}', name: 'app_cours')]
     public function index(Cours $cours, int $position, EntityManagerInterface $entityManager): Response
     {
-        $chapitre = $cours->getChapitres()[$position];
+        $chapitres = $cours->getChapitres();
+        $chapitre = $chapitres[$position];
 
         $user = $this->security->getUser();
 
-        $utilisateurChapitre = null;
+        $utilisateursChapitres = array();
 
         if($user != null && $user instanceof Utilisateurs)
         {
-            $utilisateurChapitre = $entityManager->getRepository(UtilisateursChapitres::class)->findByForeignKey($user, $chapitre);
-
-            if($utilisateurChapitre == null)
+            foreach($chapitres as $c)
             {
-                $utilisateurChapitre = new UtilisateursChapitres();
-                $utilisateurChapitre->setUtilisateur($user);
-                $utilisateurChapitre->setChapitre($chapitre);
-                $utilisateurChapitre->setChapitreTermine(0);
-                
-                $entityManager->persist($utilisateurChapitre);
-                $entityManager->flush();
+                $utilisateurChapitre = $entityManager->getRepository(UtilisateursChapitres::class)->findByForeignKey($user, $c);
+
+                if($utilisateurChapitre == null)
+                {
+                    $utilisateurChapitre = new UtilisateursChapitres();
+                    $utilisateurChapitre->setUtilisateur($user);
+                    $utilisateurChapitre->setChapitre($chapitre);
+                    $utilisateurChapitre->setChapitreTermine(0);
+                    
+                    $entityManager->persist($utilisateurChapitre);
+                    $entityManager->flush();
+                }
+
+                array_push($utilisateursChapitres, $utilisateurChapitre);
             }
         }
 
         return $this->render('cours/index.html.twig', [
             'cours' => $cours,
             'chapitre' => $chapitre,
-            'utilisateurChapitre' => $utilisateurChapitre,
+            'utilisateursChapitres' => $utilisateursChapitres,
         ]);
     }
 
