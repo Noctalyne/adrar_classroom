@@ -2,6 +2,10 @@
 
 {% block title %}{% endblock %}
 
+    {% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/cours.css') }}"/> 
+    {% endblock %}
+
 {% block body %}
 
 <section>
@@ -11,11 +15,11 @@
             <div class="cours-info">
                 <div class="cours-info-left">
                     <div class="cours-temps-estime">
-                        <img class="image-cours-temps-estime" src="{{ asset('images/clock-regular.png') }}">
+                        <img class="image-cours-temps-estime" src="{{ asset('images/clock-regularicons.svg') }}">
                         <p>{{ cours.tempsEstime|trans ~ ' Heures' }}</p>
                     </div>
                     <div class="cours-niveau">
-                        <img class="image-cours-niveau" src="{{ asset('images/signal-solid.png') }}">
+                        <img class="image-cours-niveau" src="{{ asset('images/signal-solidicons.svg') }}">
                         <p>{{ 'Niveau ' ~ cours.niveau|trans }}</p>
                     </div>
                 </div>
@@ -32,14 +36,20 @@
         <div class="chapitre-navigation">
             <img src="{{ asset('images/house-circle.png') }}">
 
-            {% for chapitreCours in cours.getChapitres() %}
-            {% if chapitre.position == chapitreCours.position %}
-            <div class="chapitre-navigation-bloc chapitre-courant" onclick="moveToChapter('{{ cours.id }}', '{{ chapitreCours.position }}')">
+            {% for c in cours.getChapitres() %}
+
+            {% for uc in utilisateursChapitres|filter(uc => uc.chapitre == c) %}
+
+            {% if chapitre.position == c.position %}
+            <div class="chapitre-navigation-bloc chapitre-courant {{ uc.chapitreTermine == 1 ? 'chapitre-termine' : '' }}" onclick="moveToChapter('{{ cours.id }}', '{{ c.position }}')">
                 <span class="chapitre-navigation-fleche"><img src="{{ asset('images/sort-up.png') }}"></span>
             </div>
             {% else %}
-            <div class="chapitre-navigation-bloc" onclick="moveToChapter('{{ cours.id }}', '{{ chapitreCours.position }}')"></div>
-            {% endif %}            
+            <div class="chapitre-navigation-bloc {{ uc.chapitreTermine == 1 ? 'chapitre-termine' : '' }}" onclick="moveToChapter('{{ cours.id }}', '{{ c.position }}')"></div>
+            {% endif %}     
+            
+            {% endfor %}
+
             {% endfor %}
 
             <img src="{{ asset('images/certificate-circle.png') }}">

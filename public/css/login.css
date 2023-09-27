@@ -88,7 +88,7 @@
     margin-top: 5%;
 }
 
-span{
+/* span{
 
     width: 50px; 
     height: 50px; 
@@ -100,7 +100,18 @@ span{
 span .google {
     max-width: 80%; 
     z-index: 1;
+} */
+
+
+/* Bouton de l'icone Google */
+.bouton_google {
+    border-radius: 5px;
+    border: solid #D4D4D4 3px ;
 }
+
+
+
+
 
 
 /* Colonne de droite */
@@ -127,6 +138,5 @@ span .google {
     position: absolute; 
     bottom: 0;
     left: 50%; 
-    transform: translateX(-50%); 
-
+    transform: translateX(-50%);
 }

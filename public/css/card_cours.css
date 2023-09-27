@@ -80,3 +80,8 @@ body {
 .div4 {
     grid-area: 3 / 1 / 4 / 4;
 }
+
+.div5 {
+    grid-area: 3 / 4 / 4 / 4;
+    align-self:flex-end; /* Met le bouton en bas du bloc */
+}
