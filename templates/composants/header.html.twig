@@ -24,7 +24,7 @@
 {% if app.user %}
         <div class="user-info">
             <p>{{ app.user.prenom }}</p>
-            <img src={{ app.user.image }} alt="Avatar" class="avatar" />
+            <img src={{ app.user.image }}  alt="Avatar" class="avatar" />
 
             <form method="post" action="{{ path('app_logout') }}">
                 <button type="submit" class="logout">Déconnexion</button>

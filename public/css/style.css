@@ -3,10 +3,10 @@
 body {
     margin: 0px;
     font-family: 'Inter', sans-serif; /* Modifie la police de tous le document */
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
 }
 
-.header{
+/* .header{
     background-color: black;
     color: #5584AC;
     display: flex;
@@ -14,7 +14,7 @@ body {
     text-align: center ;
     justify-content: space-around;
     align-items: center;
-}
+} */
 
 .logo{
     max-width: 100%;
@@ -42,9 +42,9 @@ body {
     font-size: 20pt;
 }
 
-body{
-    overflow: auto;
-}
+.navbar a:hover {
+    color: gray;
+  }
 
 body .firstDiv{
     max-width: 100%;

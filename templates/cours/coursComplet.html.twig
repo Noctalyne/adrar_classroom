@@ -6,76 +6,78 @@
     <link rel="stylesheet" href="{{ asset('css/cours.css') }}"/>
 {% endblock %}
 
+
+
 {% block body %}
 
-<header> {% include './composants/header.html.twig' %} </header> 
+    <header> {% include './composants/header.html.twig' %} </header> 
 
-<section>
-    <div class="cours-header">
-        <div class="cours-header-container">
-            <h3 class="cours-titre">{{ cours.titre }}</h3>
-            <div class="cours-info">
-                <div class="cours-info-left">
-                    <div class="cours-temps-estime">
-                        <img class="image-cours-temps-estime" src="{{ asset('images/clock-regularicons.svg') }}">
-                        <p>{{ cours.tempsEstime|trans ~ ' Heures' }}</p>
+    <section>
+        <div class="cours-header">
+            <div class="cours-header-container">
+                <h3 class="cours-titre">{{ cours.titre }}</h3>
+                <div class="cours-info">
+                    <div class="cours-info-left">
+                        <div class="cours-temps-estime">
+                            <img class="image-cours-temps-estime" src="{{ asset('images/clock-regularicons.svg') }}">
+                            <p>{{ cours.tempsEstime|trans ~ ' Heures' }}</p>
+                        </div>
+                        <div class="cours-niveau">
+                            <img class="image-cours-niveau" src="{{ asset('images/signal-solidicons.svg') }}">
+                            <p>{{ 'Niveau ' ~ cours.niveau|trans }}</p>
+                        </div>
                     </div>
-                    <div class="cours-niveau">
-                        <img class="image-cours-niveau" src="{{ asset('images/signal-solidicons.svg') }}">
-                        <p>{{ 'Niveau ' ~ cours.niveau|trans }}</p>
-                    </div>
-                </div>
-                <div class="cours-info-right">
-                    <div class="cours-date">
-                        <img class="image-cours-date" src="{{ asset('images/pdf-circle.png') }}">
-                        <p>{{ cours.date }}</p>
+                    <div class="cours-info-right">
+                        <div class="cours-date">
+                            <img class="image-cours-date" src="{{ asset('images/pdf-circle.png') }}">
+                            <p>{{ cours.date }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="chapitre-contenu">
-        <div class="chapitre-navigation">
-            <img src="{{ asset('images/house-circle.png') }}">
+        <div class="chapitre-contenu">
+            <div class="chapitre-navigation">
+                <img src="{{ asset('images/house-circle.png') }}">
 
-            {% for c in cours.getChapitres() %}
+                {% for c in cours.getChapitres() %}
 
-            {% for uc in utilisateursChapitres|filter(uc => uc.chapitre == c) %}
+                {% for uc in utilisateursChapitres|filter(uc => uc.chapitre == c) %}
 
-            {% if chapitre.position == c.position %}
-            <div class="chapitre-navigation-bloc chapitre-courant {{ uc.chapitreTermine == 1 ? 'chapitre-termine' : '' }}" onclick="moveToChapter('{{ cours.id }}', '{{ c.position }}')">
-                <span class="chapitre-navigation-fleche"><img src="{{ asset('images/sort-upicons.svg') }}"></span>
+                {% if chapitre.position == c.position %}
+                <div class="chapitre-navigation-bloc chapitre-courant {{ uc.chapitreTermine == 1 ? 'chapitre-termine' : '' }}" onclick="moveToChapter('{{ cours.id }}', '{{ c.position }}')">
+                    <span class="chapitre-navigation-fleche"><img src="{{ asset('images/sort-upicons.svg') }}"></span>
+                </div>
+                {% else %}
+                <div class="chapitre-navigation-bloc {{ uc.chapitreTermine == 1 ? 'chapitre-termine' : '' }}" onclick="moveToChapter('{{ cours.id }}', '{{ c.position }}')"></div>
+                {% endif %}     
+                
+                {% endfor %}
+
+                {% endfor %}
+
+                <img src="{{ asset('images/certificate-circle.png') }}">
             </div>
-            {% else %}
-            <div class="chapitre-navigation-bloc {{ uc.chapitreTermine == 1 ? 'chapitre-termine' : '' }}" onclick="moveToChapter('{{ cours.id }}', '{{ c.position }}')"></div>
-            {% endif %}     
-            
-            {% endfor %}
-
-            {% endfor %}
-
-            <img src="{{ asset('images/certificate-circle.png') }}">
+            <h3>{{ chapitre.titre }}</h3>
+            <p>{{ chapitre.contenu }}</p>
+            <div class="chapitre-buttons-navigation">
+                <button id="valider-chapitre" onclick="validateChapter('{{ cours.id }}', '{{ chapitre.position }}')">Je valide ce chapitre et je passe au suivant</button>
+                <div class="chapitre-precedent-suivant">
+                    {% if chapitre.position != 0 %}
+                    <button id="chapitre-precedent" onclick="previousChapter('{{ cours.id }}', '{{ chapitre.position }}')">Passer au chapitre précédent</button>
+                    {% else %}
+                    <span style="visibility: hidden;"></span>
+                    {% endif %}
+                    {% if chapitre.position != chapitre.cours.getChapitres().count() - 1 %}
+                    <button id="chapitre-suivant" onclick="nextChapter('{{ cours.id }}', '{{ chapitre.position }}')">Passer au chapitre suivant</button>
+                    {% else %}
+                    <span style="visibility: hidden;"></span>
+                    {% endif %}
+                </div>            
+            </div>
+            <a class="retour_listeCours" href="{{ path('app_listeCours') }}">Retour à la liste des cours</a>
         </div>
-        <h3>{{ chapitre.titre }}</h3>
-        <p>{{ chapitre.contenu }}</p>
-        <div class="chapitre-buttons-navigation">
-            <button id="valider-chapitre" onclick="validateChapter('{{ cours.id }}', '{{ chapitre.position }}')">Je valide ce chapitre et je passe au suivant</button>
-            <div class="chapitre-precedent-suivant">
-                {% if chapitre.position != 0 %}
-                <button id="chapitre-precedent" onclick="previousChapter('{{ cours.id }}', '{{ chapitre.position }}')">Passer au chapitre précédent</button>
-                {% else %}
-                <span style="visibility: hidden;"></span>
-                {% endif %}
-                {% if chapitre.position != chapitre.cours.getChapitres().count() - 1 %}
-                <button id="chapitre-suivant" onclick="nextChapter('{{ cours.id }}', '{{ chapitre.position }}')">Passer au chapitre suivant</button>
-                {% else %}
-                <span style="visibility: hidden;"></span>
-                {% endif %}
-            </div>            
-        </div>
-        <a class="retour_listeCours" href="{{ path('app_listeCours') }}">Retour à la liste des cours</a>
-    </div>
-</section>
+    </section>
 
 {% endblock %}
 
