@@ -24,6 +24,7 @@ class Cours
 
     #[ORM\Column(type: Types::SMALLINT, name: "cours_niveau")]
     private ?int $niveau = null;
+    // private Collection $niveauxCours; // test pour recup les nivx
 
     #[ORM\Column(name: "cours_temps_estime")]
     private ?int $tempsEstime = null;
@@ -43,6 +44,7 @@ class Cours
     public function __construct()
     {
         $this->chapitres = new ArrayCollection();
+        // $this->niveauxCours = new ArrayCollection();
     }
 
     public function getId(): ?int
