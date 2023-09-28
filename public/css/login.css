@@ -62,6 +62,12 @@
     margin-top: 5%;
 }
 
+/* Bouton de l'icone Google */
+.bouton_google {
+    border-radius: 5px;
+    border: solid #D4D4D4 3px ;
+}
+
 /* Partie basse avec la ligne */
 .text-with-lines {
     display: flex;

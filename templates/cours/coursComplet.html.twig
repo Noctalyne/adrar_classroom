@@ -1,12 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}Cours de {{ cours.titre }} {% endblock %}
 
-    {% block stylesheets %}
-<link rel="stylesheet" href="{{ asset('css/cours.css') }}"/> 
-    {% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/cours.css') }}"/>
+{% endblock %}
 
 {% block body %}
+
+<header> {% include './composants/header.html.twig' %} </header> 
 
 <section>
     <div class="cours-header">
@@ -42,7 +44,7 @@
 
             {% if chapitre.position == c.position %}
             <div class="chapitre-navigation-bloc chapitre-courant {{ uc.chapitreTermine == 1 ? 'chapitre-termine' : '' }}" onclick="moveToChapter('{{ cours.id }}', '{{ c.position }}')">
-                <span class="chapitre-navigation-fleche"><img src="{{ asset('images/sort-up.png') }}"></span>
+                <span class="chapitre-navigation-fleche"><img src="{{ asset('images/sort-upicons.svg') }}"></span>
             </div>
             {% else %}
             <div class="chapitre-navigation-bloc {{ uc.chapitreTermine == 1 ? 'chapitre-termine' : '' }}" onclick="moveToChapter('{{ cours.id }}', '{{ c.position }}')"></div>
@@ -57,7 +59,7 @@
         <h3>{{ chapitre.titre }}</h3>
         <p>{{ chapitre.contenu }}</p>
         <div class="chapitre-buttons-navigation">
-            <a id="valider-chapitre" href="{{ path('valider_cours', {'cours': cours.id, 'position': chapitre.position}) }}">Je valide ce chapitre et je passe au suivant</button>
+            <button id="valider-chapitre" onclick="validateChapter('{{ cours.id }}', '{{ chapitre.position }}')">Je valide ce chapitre et je passe au suivant</button>
             <div class="chapitre-precedent-suivant">
                 {% if chapitre.position != 0 %}
                 <button id="chapitre-precedent" onclick="previousChapter('{{ cours.id }}', '{{ chapitre.position }}')">Passer au chapitre précédent</button>
@@ -69,9 +71,12 @@
                 {% else %}
                 <span style="visibility: hidden;"></span>
                 {% endif %}
-            </div>
+            </div>            
         </div>
+        <a class="retour_listeCours" href="{{ path('app_listeCours') }}">Retour à la liste des cours</a>
     </div>
 </section>
 
 {% endblock %}
+
+
