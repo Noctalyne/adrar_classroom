@@ -13,21 +13,13 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CoursController extends AbstractController
 {
-    private $security;
-
-    public function __construct(Security $security)
-    {
-        $this->security = $security;
-    }
-
-    #[Route('/{cours}/{position}', name: 'app_cours')]
-    public function index(Cours $cours, int $position, EntityManagerInterface $entityManager): Response
+    #[Route('/{cours}/{position}', name: 'app_cours_chapitre')]
+    public function index(Cours $cours, int $position, Security $security, EntityManagerInterface $entityManager): Response
     {
         $chapitres = $cours->getChapitres();
         $chapitre = $chapitres[$position];
 
-        $user = $this->security->getUser();
-
+        $user = $security->getUser();
         $utilisateursChapitres = array();
 
         if($user != null && $user instanceof Utilisateurs)
@@ -38,10 +30,11 @@ class CoursController extends AbstractController
 
                 if($utilisateurChapitre == null)
                 {
+                    var_dump("util chap");
                     
                     $utilisateurChapitre = new UtilisateursChapitres();
                     $utilisateurChapitre->setUtilisateur($user);
-                    $utilisateurChapitre->setChapitre($chapitre);
+                    $utilisateurChapitre->setChapitre($c);
                     $utilisateurChapitre->setChapitreTermine(0);
                     
                     $entityManager->persist($utilisateurChapitre);
@@ -60,13 +53,13 @@ class CoursController extends AbstractController
     }
 
     #[Route('/{cours}/{position}/valider', name: 'valider_cours')]
-    public function validerChapitre(Cours $cours, int $position, EntityManagerInterface $entityManager): Response
+    public function validerChapitre(Cours $cours, int $position, Security $security, EntityManagerInterface $entityManager): Response
     {
         $chapitres = $cours->getChapitres();
 
         $chapitre = $chapitres[$position];
 
-        $user = $this->security->getUser();
+        $user = $security->getUser();
 
         $utilisateurChapitre = null;
 
@@ -85,7 +78,7 @@ class CoursController extends AbstractController
 
         if($chapitre->getPosition() < $chapitres->count() - 1) $chapitre = $chapitres[$position + 1];
 
-        return $this->redirectToRoute('app_cours', [
+        return $this->redirectToRoute('app_cours_chapitre', [
             'cours' => (string) $cours->getId(),
             'position' => (string) $chapitre->getPosition(),
         ]);

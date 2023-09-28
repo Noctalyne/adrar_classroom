@@ -57,7 +57,7 @@
         <h3>{{ chapitre.titre }}</h3>
         <p>{{ chapitre.contenu }}</p>
         <div class="chapitre-buttons-navigation">
-            <button id="valider-chapitre" onclick="validateChapter('{{ cours.id }}', '{{ chapitre.position }}')">Je valide ce chapitre et je passe au suivant</button>
+            <a id="valider-chapitre" href="{{ path('valider_cours', {'cours': cours.id, 'position': chapitre.position}) }}">Je valide ce chapitre et je passe au suivant</button>
             <div class="chapitre-precedent-suivant">
                 {% if chapitre.position != 0 %}
                 <button id="chapitre-precedent" onclick="previousChapter('{{ cours.id }}', '{{ chapitre.position }}')">Passer au chapitre précédent</button>
