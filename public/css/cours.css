@@ -117,18 +117,29 @@
 #chapitre-precedent, #chapitre-suivant
 {
     height: 35px;
-    border-radius: 5px;
     border-style: solid;
     border-width: 1px;
     border-color: #5584AC;
     color: #5584AC;
     background-color: white;
+}
+
+#chapitre-precedent, #chapitre-suivant, #valider-chapitre
+{
     cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; 
+    padding: 5px 10px; 
+    height: 35px;
+    border-radius: 5px;
 }
 
 .chapitre-termine
 {
-    background-color: green;
+    background-color: #3AB600;
 }
 
 #valider-chapitre
@@ -137,7 +148,4 @@
     color: white;
     background-color: #5584AC;
     border: 0;
-    height: 35px;
-    border-radius: 5px;
-    cursor: pointer;
 }
