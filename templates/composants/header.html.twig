@@ -3,25 +3,33 @@
  {% endblock %}
 
 
-        <div class="header">
-    <img src="{{ asset('images/adrar-classrooms-logoLogo.png') }}" alt="Logo" class="logo" />
-    <h1>Classrooms</h1>
-        <ul class="navbar">
+<div class="header">
+
+    {# <div class="navigation"> #}
+        <img src="{{ asset('images/adrar-classrooms-logoLogo.png') }}" alt="Logo" class="logo" />
+
+        <h1>Classrooms</h1>
+        <ul class="navbar" id="navig">
             <a href="{{ path('app_index') }}">Accueil</a>
             <a href="{{ path('app_listeCours') }}">Formations</a>
             <a href="{{ path('app_administration') }}">Administration</a>
         </ul>
-             <img src="{{ asset('images/magnifying-glass-solid.svg') }}" alt="icon" class="icon"  />
+        <img src="{{ asset('images/magnifying-glass-solid.svg') }}" alt="icon" class="icon"  />
 
-<div id="search-container">
-    <form action="{{ path('app_index') }}" method="POST" >
-     <div id="search-button">
-            <img src="{{ asset('images/magnifying-glass-solid.svg') }}" alt="icon" class="icon2"  />
+        <div id="search-container">
+            <form action="{{ path('app_index') }}" method="POST" >
+
+                <div id="search-button">
+                    <img src="{{ asset('images/magnifying-glass-solid.svg') }}" alt="icon" class="icon2"  />
+                </div>
+
+                <input type="text" name="q" placeholder="Rechercher (langages, mots-clés, cours, ...)" />
+                
+            </form>
         </div>
-        <input type="text" name="q" placeholder="Recherche..." />
-    </form>
-</div>
-{% if app.user %}
+    {# </div> #}
+
+    {% if app.user %}
         <div class="user-info">
             <p>{{ app.user.prenom }}</p>
             <img src={{ app.user.image }}  alt="Avatar" class="avatar" />
@@ -36,4 +44,5 @@
             <button type="submit" class="login">Se connecter</button>
         </form>
     {% endif %}
+
 </div>

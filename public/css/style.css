@@ -54,11 +54,12 @@ body .firstDiv{
     justify-content: space-between;
 }
 
-.undraw{
-    max-width: 100%;
-    max-height: 100%;
-    margin-top: 3%;
+.undraw{    
+    width: 240px;
+    height: 240px;
+    margin-top: 2%;
     margin-right: 10%;
+    object-fit: cover;
 }
 
 .firstText{
@@ -103,12 +104,13 @@ h1{
     justify-content: space-around;
     text-align: center;
     column-count: 3;
+    position: relative; /* permet de passer la div au dessus des autres */
 }
 
 .col img{
     max-width: 100%;
     max-height: 100%;
-    margin-top: 3%;
+    margin-top: 4%;
 }
 
 .col p{
@@ -143,6 +145,51 @@ h1{
     transform: rotate(180deg);
     margin-right: 2%;
 }
+
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+  }
+  
+  .carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .carousel-item {
+    display: none;
+    padding: 5%;
+    text-align: center;
+    max-width: 25%;
+  }
+  
+  .carousel-item img {
+    max-width: 100%;
+  }
+  
+
+  .carousel-item:first-child {
+    display: block;
+  }
+  
+
+  .chevrons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .chevron1, .chevron2 {
+    margin: 10px;
+    cursor: pointer;
+  }
+
+
 
 .footer{
     background-color: black;

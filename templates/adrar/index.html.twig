@@ -56,18 +56,27 @@
     </div>
   </div>
 
-  <div class="thirdDiv">
-    <h2>Témoignages et sourires</h2>
-    {% for avis in app.user.avis %}
-      <img src="{{ avis.user.image }}" alt="image utilisateur" class="Ellipse4" />
-      <h3>{{ avis.user.prenom }}</h3>
-      <p>{{ avis.contenu }}</p>
-    {% endfor %}
-    <div class="chevrons">
-      <img src="{{ asset('images/circle-chevron-down-solid 2.svg') }}" alt="icon" class="chevron1" style=" fill: #ff0000; cursor: pointer;" />
-      <img src="{{ asset('images/circle-chevron-down-solid 2.svg') }}" alt="icon" class="chevron2" style="fill: #ff0000; cursor: pointer;" />
-    </div>
+<div class="thirdDiv">
+
+  <h2>Témoignages et sourires</h2>
+  <div class="carousel-container">
+    <div class="carousel">
+      {% for avis in app.user.avis %}
+        <div class="carousel-item">
+          <img src="{{ avis.user.image }}" alt="image utilisateur" class="Ellipse4" />
+          <h3>{{ avis.user.prenom }}</h3>
+          <p>{{ avis.contenu }}</p>
+        </div>
+      {% endfor %}
+      </div>  
   </div>
+
+  <div class="chevrons">
+    <img src="{{ asset('images/circle-chevron-down-solid 2.svg') }}" alt="icon" class="chevron1" style="fill: #ff0000; cursor: pointer;" />
+    <img src="{{ asset('images/circle-chevron-down-solid 2.svg') }}" alt="icon" class="chevron2" style="fill: #ff0000; cursor: pointer;" />
+  </div>
+  
+</div>
 
   {% block footer %}
     {% include './composants/footer.html.twig' %}

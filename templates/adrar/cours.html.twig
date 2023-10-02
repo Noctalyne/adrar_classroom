@@ -17,7 +17,12 @@
 
     <div id="liste_cours">
 
-        <p>{{titre.cours_titre}}</p>
+        {# <p>{{cours.titre}}</p> #}
+        {# <p>  </p> #}
+        {% for t in cours.getTitre() %}
+            <p>{{cours.t}}</p>
+        {% endfor %} 
+
 
         <div class="entete_cours" >
             <h5> Cours </h5>
