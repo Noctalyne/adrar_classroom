@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Utilisateurs{% endblock %}
+
+{% block body %}
+    <h1>Utilisateurs</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ utilisateur.id }}</td>
+            </tr>
+            <tr>
+                <th>Roles</th>
+                {% set roles = "" %}
+                {% for role in utilisateur.roles %}
+                    {% set roles = roles ~ role %}
+                    {% if not loop.last %}
+                        {% set roles = roles ~ ", " %}
+                    {% endif %}
+                {% endfor %}
+                <td>{{ roles }}</td>
+            </tr>
+            <tr>
+                <th>MotDePasse</th>
+                <td>{{ utilisateur.motDePasse }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ utilisateur.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ utilisateur.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ utilisateur.email }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ utilisateur.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_utilisateurs_edit_index') }}">back to list</a>
+
+    <a href="{{ path('app_utilisateurs_edit_edit', {'id': utilisateur.id}) }}">edit</a>
+
+    {{ include('utilisateurs_edit/_delete_form.html.twig') }}
+{% endblock %}

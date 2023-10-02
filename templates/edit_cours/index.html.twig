@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cours index{% endblock %}
+
+{% block body %}
+    <h1>Cours index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Synopsis</th>
+                <th>Niveau</th>
+                <th>TempsEstime</th>
+                <th>Image</th>
+                <th>Date</th>
+                <th>Cree</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cour in cours %}
+            <tr>
+                <td>{{ cour.id }}</td>
+                <td>{{ cour.titre }}</td>
+                <td>{{ cour.synopsis }}</td>
+                <td>{{ cour.niveau }}</td>
+                <td>{{ cour.tempsEstime }}</td>
+                <td>{{ cour.image }}</td>
+                <td>{{ cour.date }}</td>
+                <td>{{ cour.cree }}</td>
+                <td>
+                    <a href="{{ path('app_edit_cours_show', {'id': cour.id}) }}">show</a>
+                    <a href="{{ path('app_edit_cours_edit', {'id': cour.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_edit_cours_new') }}">Create new</a>
+{% endblock %}
