@@ -18,6 +18,7 @@ class Cours
 
     #[ORM\Column(length: 255, name: "cours_titre")]
     private ?string $titre = null;
+    private Collection $titreCours;
 
     #[ORM\Column(length: 255, name: "cours_synopsis")]
     private ?string $synopsis = null;
@@ -44,6 +45,7 @@ class Cours
     public function __construct()
     {
         $this->chapitres = new ArrayCollection();
+        $this->titreCours = new ArrayCollection();
         // $this->niveauxCours = new ArrayCollection();
     }
 
@@ -179,3 +181,7 @@ class Cours
         return $this;
     }
 }
+
+    // /**
+    //  * @return Collection<int, Chapitres>
+    //  */

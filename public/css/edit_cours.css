@@ -1,0 +1,26 @@
+.table {
+    margin: 2%;
+    padding: 1%;
+    /* border: solid black 1px; */
+    border-spacing: 0px;
+}
+
+.table tr {
+    border-bottom: solid black 1px;
+}
+
+.table th {
+    /* border-top: solid black 1px;
+    border-left: solid black 1px;
+    border-bottom: solid black 1px;  */
+    /* border: solid black 1px; */
+    padding: 2px;
+}
+
+.table td {
+    border-right: solid black 1px;
+    border-bottom: solid black 1px;
+    /* border: solid black 1px; */
+    /* padding: 0px; */
+    padding: 2px;
+}

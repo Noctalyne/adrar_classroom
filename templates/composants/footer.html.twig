@@ -1,12 +1,15 @@
 {# {% block footer %}  #}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/footer.css')}}">
+ {% endblock %}
 
-        <div class="footer">
-            <p>2023 © ADRAR Classrooms. Tous droits réservés.<p>
-            <div class="image-container">
-                <button id="scrollToTopButton">
-                <img src="{{ asset('images/chevron-up-solid.svg') }}" alt="icon" class="image2" id="scroll_up" style="filter: invert(1); fill: #ff0000; cursor: pointer;" />
-                <img src="{{ asset('images/chevron-up-solid.svg') }}" alt="icon" class="image3" style="filter: invert(1);fill: #ff0000; cursor: pointer;" />
-                </button>
-            </div>
-        </div>
+
+<div class="footer">
+    <p>2023 © ADRAR Classrooms. Tous droits réservés.<p>
+    div class="image-container">
+    <button id="scrollToTopButton">
+        <img src="{{ asset('images/chevron-up-solid.svg') }}" alt="icon" class="image2" id="scroll_up" style="filter: invert(1); fill: #ff0000; cursor: pointer;" />
+        <img src="{{ asset('images/chevron-up-solid.svg') }}" alt="icon" class="image3" style="filter: invert(1);fill: #ff0000; cursor: pointer;" />
+    </button>    
+</div>
 {# {% endblock %} #}

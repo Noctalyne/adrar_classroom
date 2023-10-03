@@ -6,9 +6,19 @@
         </button>
 
         <div class="dropdown-content">
-            <a href="#cours1" value="symfony">Symfony</a>
-            <a href="#cours2">PHP</a>
-            <a href="#cours3">CSS</a>
+            {% for t in listeCours %}
+                <a href="#cours1" value={{t.titre}}>{{t.titre}}</a>
+            {% endfor %} 
         </div>
     </div>
 {% endblock %}
+
+
+{# object(App\Entity\Cours)#610 (10) {
+     ["id":"App\Entity\Cours":private]=> NULL 
+     ["titre":"App\Entity\Cours":private]=> NULL 
+     ["titreCours":"App\Entity\Cours":private]=> object(Doctrine\Common\Collections\ArrayCollection)#574 (1) { ["elements":"Doctrine\Common\Collections\ArrayCollection":private]=> array(0) { } } 
+     ["synopsis":"App\Entity\Cours":private]=> NULL ["niveau":"App\Entity\Cours":private]=> NULL ["tempsEstime":"App\Entity\Cours":private]=> NULL 
+     ["image":"App\Entity\Cours":private]=> NULL 
+     ["date":"App\Entity\Cours":private]=> NULL ["cree":"App\Entity\Cours":private]=> NULL 
+     ["chapitres":"App\Entity\Cours":private]=> object(Doctrine\Common\Collections\ArrayCollection)#609 (1) { ["elements":"Doctrine\Common\Collections\ArrayCollection":private]=> array(0) { } } } NULL #}

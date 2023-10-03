@@ -11,6 +11,7 @@ use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+#[Route('cours/')]
 class CoursController extends AbstractController
 {
     #[Route('/{cours}/{position}', name: 'app_cours_chapitre')]

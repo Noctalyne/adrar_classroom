@@ -17,10 +17,14 @@
     {% include './composants/header.html.twig' %}
   {% endblock %}
 
-<div class="travaux">
-    <h1> Page en cours de création </h1>
-    <img src="{{ asset('images/work_in_progress.jpg') }}" alt="en travaux" style=""/>
-</div>
+  <div>
+    <h3> Ici vous avez accès a l'enssemble des cours</h3>
+  </div>
+
+  <div>
+    <p> Accès au cours :</p>
+    <button><a href="{{ path('app_edit_cours_index') }}">Afficher les cours</a></button>  
+  </div>
 
   {% block footer %}
     {% include './composants/footer.html.twig' %}
